@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
     
-    <!-- SEO Meta Tags Added -->
     <meta name="author" content="Syed Arbaz Ali Rizvi">
     <meta name="description" content="Explore the academic portfolio of Syed Arbaz Ali Rizvi, a BS Computer Science graduate (CGPA 3.41) specializing in AI and Machine Learning. See projects, testimonials, and certificates from Stanford and IBM.">
     <meta name="keywords" content="Syed Arbaz Ali Rizvi, Arbaaz Rizvi, Academic Portfolio, BS Computer Science, GCUF, AI, Artificial Intelligence, Machine Learning, Data Science, Python, Stanford, IBM, Johns Hopkins, Web Developer, Portfolio">
-    <!-- End of SEO Meta Tags -->
-
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <!-- NEW: Load TypeIt.js for Typing Animation -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -27,15 +20,15 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#0D9488', // Teal
-                        'primary-dark': '#0F766E',
-                        'light-gray': '#F8FAFC',
+                        // --- COLOR CHANGED ---
+                        'primary': '#4F46E5', // Was Teal '#0D9488', Now Indigo-600
+                        'primary-dark': '#4338CA', // Was Teal '#0F766E', Now Indigo-700
+                        'light-gray': '#F1F5F9', // Was Slate-50 '#F8FAFC', Now Slate-100
                     }
                 },
             },
         }
     </script>
-    <!-- Custom Styles -->
     <style>
         /* Custom scrollbar (optional but nice) */
         ::-webkit-scrollbar {
@@ -44,12 +37,14 @@
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
+        /* --- COLOR CHANGED --- */
         ::-webkit-scrollbar-thumb {
-            background: #0D9488;
+            background: #4F46E5; 
             border-radius: 10px;
         }
+        /* --- COLOR CHANGED --- */
         ::-webkit-scrollbar-thumb:hover {
-            background: #0F766E;
+            background: #4338CA;
         }
 
         /* Modal Animation Styles */
@@ -75,14 +70,16 @@
             top: -0.5rem;
             font-size: 4rem;
             font-weight: 900;
-            color: #0D9488;
+            /* --- COLOR CHANGED --- */
+            color: #4F46E5;
             opacity: 0.2;
             line-height: 1;
         }
         
         /* Active nav link style */
         nav a.nav-active {
-            color: #0D9488;
+            /* --- COLOR CHANGED --- */
+            color: #4F46E5;
             font-weight: 600;
         }
 
@@ -91,7 +88,8 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background-color: #0D9488;
+            /* --- COLOR CHANGED --- */
+            background-color: #4F46E5;
             color: white;
             padding: 0.75rem;
             border-radius: 9999px;
@@ -107,8 +105,9 @@
             visibility: visible;
             transform: translateY(0);
         }
+        /* --- COLOR CHANGED --- */
         #scroll-to-top:hover {
-            background-color: #0F766E;
+            background-color: #4338CA;
         }
 
         /* Scroll-reveal animation styles */
@@ -123,9 +122,11 @@
         }
 
         /* Subtle background pattern */
+        /* --- COLOR CHANGED --- */
         body {
-            background-color: #F8FAFC; /* light-gray */
-            background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px);
+            background-color: #F1F5F9; /* light-gray (Slate-100) */
+            /* Dots are Indigo-100 (#E0E7FF), which now matches the new theme! */
+            background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F1F5F9 0.5px);
             background-size: 20px 20px;
         }
 
@@ -134,34 +135,66 @@
              display: inline-block;
              width: 2px; /* Adjust width as needed */
              height: 1em; /* Match the line height */
-             background-color: #0D9488; /* Primary color */
+             /* --- COLOR CHANGED --- */
+             background-color: #4F46E5; /* Primary color */
              margin-left: 2px;
              vertical-align: text-bottom;
              animation: blink 0.7s infinite;
         }
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+             0%, 100% { opacity: 1; }
+             50% { opacity: 0; }
         }
         /* Ensure the span takes up space even when empty */
          #typing-name:empty::after {
-            content: '\00a0'; /* Non-breaking space */
+             content: '\00a0'; /* Non-breaking space */
          }
+
+        /* --- NEW: Hamburger Menu Animation --- */
+        .hamburger-button {
+            position: relative;
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px; /* 1.5rem */
+            height: 20px; /* 1.25rem */
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: #374151; /* gray-700 */
+            border-radius: 3px;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+        .hamburger-button.open .line-1 {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+        .hamburger-button.open .line-2 {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        .hamburger-button.open .line-3 {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
 
     </style>
 </head>
 
 <body class="font-sans antialiased text-gray-800">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo / Name -->
                 <div class="flex-shrink-0">
                     <a href="#home" class="text-xl font-bold text-gray-900">Syed Arbaz Ali Rizvi</a>
                 </div>
-                <!-- Desktop Navigation -->
                 <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8" id="desktop-nav-links">
                     <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
                     <a href="#education" class="text-gray-600 hover:text-primary transition-colors">Education</a>
@@ -170,15 +203,16 @@
                     <a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
                     <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">View Resume</a>
                 </div>
-                <!-- Mobile Menu Button -->
+                
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 p-2 rounded-md focus:outline-none">
-                        <i data-lucide="menu"></i>
+                    <button id="mobile-menu-button" class="hamburger-button rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger-line line-1"></span>
+                        <span class="hamburger-line line-2"></span>
+                        <span class="hamburger-line line-3"></span>
                     </button>
                 </div>
-            </div>
+                </div>
         </nav>
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">About</a>
             <a href="#education" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Education</a>
@@ -190,15 +224,11 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero -->
-        <!-- Made hero bg-white to stand out from dot background -->
         <section id="home" class="min-h-[80vh] flex items-center bg-white shadow-sm">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="flex flex-col md:flex-row items-center gap-12">
-                    <!-- Text Content -->
                     <div class="md:w-1/2 text-center md:text-left">
                         <span class="text-primary font-semibold">BS Computer Science Graduate</span>
-                        <!-- MODIFIED: Added span for typing animation -->
                         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 mb-6 leading-tight tracking-tight">
                             Hi, I'm <span id="typing-name"></span>
                         </h1>
@@ -214,7 +244,6 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Image -->
                     <div class="md:w-1/2">
                         <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" 
                              alt="A professional headshot of Syed Arbaz Ali Rizvi"
@@ -226,7 +255,6 @@
             </div>
         </section>
 
-        <!-- Section 2: About Me -->
         <section id="about" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="flex justify-center items-center gap-4 mb-6">
@@ -241,12 +269,10 @@
             </div>
         </section>
 
-        <!-- Section 3: Education & Skills -->
         <section id="education" class="py-24 md:py-32 bg-white fade-in-section shadow-sm">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Education & Skills</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Column 1: Education -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Education</h3>
@@ -255,7 +281,6 @@
                         <p class="text-sm text-gray-500">2020 - 2024</p>
                         <p class="text-sm text-gray-500 mt-1">CGPA: 3.41 / 4.00</p>
                     </div>
-                    <!-- Column 2: Key Coursework -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Relevant Coursework</h3>
@@ -268,7 +293,6 @@
                             <li>Final Year Project (A)</li>
                         </ul>
                     </div>
-                    <!-- Column 3: Skills -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Key Skills</h3>
@@ -287,13 +311,11 @@
             </div>
         </section>
 
-        <!-- NEW SECTION: Certifications -->
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Verifiable Certifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <!-- Cert 1: Stanford ML (UPDATED TITLE) -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -307,7 +329,6 @@
                         </a>
                     </div>
 
-                    <!-- Cert 2: IBM Python -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -321,7 +342,6 @@
                         </a>
                     </div>
                     
-                    <!-- Cert 3: JHU Web Dev -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -335,7 +355,6 @@
                         </a>
                     </div>
 
-                    <!-- Cert 4: IBM Data Science -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -349,7 +368,6 @@
                         </a>
                     </div>
 
-                    <!-- Cert 5: Helsinki AI -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -363,7 +381,6 @@
                         </a>
                     </div>
                     
-                    <!-- Cert 6: NEW CERTIFICATE (What is Data Science?) -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -377,7 +394,6 @@
                         </a>
                     </div>
                     
-                    <!-- Cert 7: NEW CERTIFICATE (Tools for Data Science) -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
@@ -395,15 +411,13 @@
             </div>
         </section>
 
-        <!-- Section 4: Projects -->
         <section id="projects" class="py-24 md:py-32 bg-white fade-in-section shadow-sm">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Featured Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Project Card 1 (Final Year Project) -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover"
+                        <img src="https://placehold.co/600x400/4F46E5/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;">
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -422,9 +436,8 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2 (From Web Dev Course) -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover"
+                        <img src="https://placehold.co/600x400/4338CA/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;">
                         <div class="p-6">
                              <div class="flex justify-between items-start mb-2">
@@ -442,9 +455,8 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3 (From ML Course) -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                         <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover"
+                         <img src="https://placehold.co/600x400/312E81/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
                          <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -462,7 +474,6 @@
                         </div>
                     </div>
                     
-                    <!-- NEW: Project Card 4 (Future Project) -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300 transform hover:scale-105 transition-transform duration-300">
                         <div class="p-6 h-full flex flex-col justify-center items-center text-center">
                             <i data-lucide="lightbulb" class="w-12 h-12 text-gray-400 mb-4"></i>
@@ -477,13 +488,11 @@
             </div>
         </section>
 
-        <!-- MODIFIED SECTION: Testimonials -->
         <section id="testimonials" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16 tracking-tight">What My Professors Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     
-                    <!-- Testimonial 1 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
                         <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"
@@ -497,7 +506,6 @@
                         </p>
                     </div>
 
-                    <!-- Testimonial 2 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
                         <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"
@@ -511,7 +519,6 @@
                         </p>
                     </div>
                     
-                    <!-- NEW: Testimonial 3 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
                         <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Mas Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"
@@ -529,12 +536,10 @@
             </div>
         </section>
 
-        <!-- Section 5: Resume / CTA -->
         <section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
-                <p class="text-lg text-primary-100 mb-8">
-                    Download my complete CV, which includes all coursework, experience, and the full recommendation letters.
+                <p class="text-lg text-indigo-100 mb-8"> Download my complete CV, which includes all coursework, experience, and the full recommendation letters.
                 </p>
                 <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" 
                    class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">
@@ -544,11 +549,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <!-- Replace with your actual links -->
                 <a href="[YOUR_LINKEDIN_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer">
                     <i data-lucide="linkedin" class="w-6 h-6"></i>
                 </a>
@@ -559,21 +562,18 @@
                     <i data-lucide="mail" class="w-6 h-6"></i>
                 </a>
             </div>
-            <p>&copy; <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
+            <p>© <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ADDED: Gemini API Modal -->
     <div id="gemini-modal" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div id="gemini-modal-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-2xl transform transition-all">
-            <!-- Modal Header -->
             <div class="flex items-center justify-between p-4 border-b">
                 <h3 class="text-xl font-semibold text-gray-900" id="gemini-modal-title">✨ AI Helper</h3>
                 <button id="gemini-modal-close" class="text-gray-400 hover:text-gray-600">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <!-- Modal Body -->
             <div class="p-6 space-y-4">
                 <div>
                     <label for="gemini-modal-input" class="block text-sm font-medium text-gray-700">Your Notes / Keywords:</label>
@@ -586,7 +586,6 @@
                 </div>
                 <div id="gemini-error-message" class="text-red-600 text-sm hidden"></div>
             </div>
-            <!-- Modal Footer -->
             <div class="flex flex-col sm:flex-row items-center justify-between p-4 border-t gap-2">
                 <button id="gemini-modal-copy" class="w-full sm:w-auto bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors flex items-center justify-center gap-2">
                     <i data-lucide="copy" class="w-4 h-4"></i>
@@ -600,17 +599,14 @@
         </div>
     </div>
     
-    <!-- NEW: Welcome Popup Modal -->
     <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div id="welcome-popup-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all text-center">
-            <!-- Modal Header -->
             <div class="flex items-center justify-between p-4 border-b">
                 <h3 class="text-xl font-semibold text-gray-900">Welcome to my Portfolio!</h3>
                 <button id="welcome-popup-close" class="text-gray-400 hover:text-gray-600">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <!-- Modal Body -->
             <div class="p-6">
                 <i data-lucide="user-round" class="w-16 h-16 text-primary mx-auto mb-4"></i>
                 <p class="text-lg text-gray-700 mb-2">
@@ -620,21 +616,18 @@
                     Thank you for visiting my academic portfolio. I'm excited to share my projects and achievements with you.
                 </p>
             </div>
-            <!-- Modal Footer -->
             <div class="p-4 border-t">
                  <button id="welcome-popup-ok" class="w-full bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors">
-                    View Portfolio
-                </button>
+                     View Portfolio
+                 </button>
             </div>
         </div>
     </div>
     
-    <!-- NEW: Scroll-to-top button -->
     <button id="scroll-to-top" title="Scroll to top">
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
-    <!-- JavaScript for smooth scrolling and mobile menu -->
     <script>
         // Wait for the DOM to be fully loaded before running any script
         document.addEventListener('DOMContentLoaded', () => {
@@ -654,16 +647,28 @@
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
+            // --- MODIFIED: Mobile Menu Toggle ---
             if (menuButton) {
                 menuButton.addEventListener('click', () => {
+                    // Check if menu is hidden *before* toggling
+                    const isHidden = mobileMenu.classList.contains('hidden');
                     mobileMenu.classList.toggle('hidden');
+                    menuButton.classList.toggle('open');
+                    menuButton.setAttribute('aria-expanded', isHidden); // If it *was* hidden, it's now expanded
                 });
             }
+            // --- End of Modification ---
 
             if (mobileMenu) {
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('hidden');
+                        // --- ADDED: Close hamburger button when link is clicked ---
+                        if (menuButton) {
+                            menuButton.classList.remove('open');
+                            menuButton.setAttribute('aria-expanded', 'false');
+                        }
+                        // --- End of Addition ---
                     });
                 });
             }
