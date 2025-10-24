@@ -16,7 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <!-- NEW: Load TypeIt.js for Typing Animation -->
+    <!-- Load TypeIt.js for Typing Animation -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- Configure Tailwind -->
     <script>
@@ -27,7 +27,6 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // UPDATED: Brighter Teal based on screenshot
                         'primary': '#14B8A6', // Teal 500
                         'primary-dark': '#0D9488', // Teal 600
                         'light-gray': '#F8FAFC',
@@ -38,6 +37,8 @@
     </script>
     <!-- Custom Styles -->
     <style>
+        /* ... (Keep existing styles from previous version) ... */
+
         /* Custom scrollbar (using UPDATED colors) */
         ::-webkit-scrollbar {
             width: 8px;
@@ -147,10 +148,27 @@
         #typing-name:empty::after {
             content: '\00a0'; 
          }
-         /* NEW: Add color to the typing name itself */
          #typing-name {
              color: #14B8A6; /* primary */
          }
+
+        /* NEW: Styles for Google Translate Widget */
+        #google_translate_element {
+            display: inline-block; /* Adjust layout */
+            vertical-align: middle;
+        }
+        /* Style the dropdown itself (optional, might require !important) */
+        .goog-te-combo {
+             padding: 4px 6px;
+             border-radius: 4px;
+             border: 1px solid #D1D5DB; /* gray-300 */
+             font-size: 0.875rem;
+        }
+         /* Hide Google's top frame */
+        body > .skiptranslate { display: none !important; }
+        body { top: 0 !important; }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+
 
     </style>
 </head>
@@ -166,18 +184,21 @@
                     <a href="#home" class="text-xl font-bold text-gray-900">Syed Arbaz Ali Rizvi</a>
                 </div>
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8" id="desktop-nav-links">
+                <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6" id="desktop-nav-links">
                     <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
                     <a href="#education" class="text-gray-600 hover:text-primary transition-colors">Education</a>
                     <a href="#certifications" class="text-gray-600 hover:text-primary transition-colors">Certifications</a>
                     <a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a>
                     <a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
                     <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">View Resume</a>
+                    <!-- NEW: Google Translate Element -->
+                    <div id="google_translate_element" class="ml-4"></div>
                 </div>
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                     <!-- UPDATED: Added text-primary -->
-                    <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none">
+                <div class="md:hidden flex items-center">
+                     <!-- NEW: Google Translate Element for Mobile -->
+                     <div id="google_translate_element_mobile" class="mr-2"></div>
+                     <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
@@ -191,6 +212,11 @@
             <a href="#projects" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Projects</a>
             <a href="#testimonials" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Testimonials</a>
             <a href="#resume" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">View Resume</a>
+             <!-- NEW: Separator for Mobile Translate -->
+            <div class="px-4 py-2 border-t">
+                 <p class="text-sm text-gray-500">Translate:</p>
+                 <div id="google_translate_element_mobile_menu"></div>
+            </div>
         </div>
     </header>
 
@@ -637,7 +663,10 @@
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
-    <!-- JavaScript for smooth scrolling and mobile menu -->
+    <!-- JavaScript for smooth scrolling, mobile menu, animations, etc. -->
+    <!-- NEW: Google Translate Init Script -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <script>
         // Wait for the DOM to be fully loaded before running any script
         document.addEventListener('DOMContentLoaded', () => {
@@ -1001,11 +1030,36 @@
                  console.error("TypeIt library not loaded.");
              }
 
-
         }); // End of DOMContentLoaded listener
+
+        // --- NEW: Google Translate Init Function (MUST be global) ---
+        function googleTranslateElementInit() {
+             new google.translate.TranslateElement({
+                 pageLanguage: 'en', // Your site's default language
+                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // Keeps it compact
+                 autoDisplay: false // Don't auto-show banner
+             }, 'google_translate_element'); // ID for desktop
+
+             // Duplicate for mobile header (if exists)
+             if(document.getElementById('google_translate_element_mobile')) {
+                  new google.translate.TranslateElement({
+                     pageLanguage: 'en', 
+                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                     autoDisplay: false 
+                 }, 'google_translate_element_mobile');
+             }
+             // Duplicate for mobile menu (if exists)
+             if(document.getElementById('google_translate_element_mobile_menu')) {
+                  new google.translate.TranslateElement({
+                     pageLanguage: 'en', 
+                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // Or try .VERTICAL
+                     autoDisplay: false 
+                 }, 'google_translate_element_mobile_menu');
+             }
+        }
+
     </script>
 
 </body>
 
 </html>
-
