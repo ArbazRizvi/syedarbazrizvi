@@ -49,16 +49,18 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #0F766E;
         }
-        /* Add a subtle animation for the modal */
-        #gemini-modal-content {
+
+        /* Modal Animation Styles */
+        .modal-content {
             opacity: 0;
             transform: scale(0.95);
         }
-        #gemini-modal.flex #gemini-modal-content {
+        .modal-backdrop.flex .modal-content {
             opacity: 1;
             transform: scale(1);
             transition: opacity 200ms ease-out, transform 200ms ease-out;
         }
+
         /* Style for testimonial quotes */
         .testimonial-quote {
             position: relative;
@@ -196,7 +198,8 @@
                         <img src="https://lh3.googleusercontent.com/d/1P5L1G_aoQKIQ1n7jOHvQ9qc00gtsE8yg" 
                              alt="A professional headshot of Syed Arbaz Ali Rizvi"
                              class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover"
-                             onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
+                             onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;"
+                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
                     </div>
                 </div>
             </div>
@@ -348,18 +351,18 @@
                         </a>
                     </div>
                     
-                    <!-- Cert 6: English Proficiency -->
+                    <!-- Cert 6: NEW CERTIFICATE -->
                     <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">English Language Proficiency</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Full Stack Development</h3>
                             <p class="text-gray-600 text-sm mb-4">
-                                GC University Faisalabad
+                                [Issuing Authority, e.g., Meta, Coursera]
                             </p>
                         </div>
-                        <a href="#resume" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">
-                            View Document
+                        <a href="[PASTE_NEW_CERT_LINK_HERE]" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">
+                            Verify Certificate
                         </a>
                     </div>
 
@@ -465,53 +468,53 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     
                     <!-- Testimonial 1 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                        <!-- Image above -->
+                        <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-6 border-2 border-primary/50 object-cover"
+                             onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"
+                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
+                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic mb-6 flex-grow">
                             "Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."
                         </p>
-                        <div class="flex items-center">
-                            <!-- Added circular image -->
-                            <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-16 h-16 mr-4 border-2 border-primary/50 object-cover"
-                                 onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;">
-                            <div>
-                                <p class="font-semibold text-gray-900">Mr. Ali Raza Shah</p>
-                                <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
-                            </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Mr. Ali Raza Shah</p>
+                            <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
                         </div>
                     </div>
 
                     <!-- Testimonial 2 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                        <!-- Image above -->
+                        <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-6 border-2 border-primary/50 object-cover"
+                             onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"
+                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
+                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic mb-6 flex-grow">
                             "He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."
                         </p>
-                         <div class="flex items-center">
-                            <!-- Added circular image -->
-                            <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-16 h-16 mr-4 border-2 border-primary/50 object-cover"
-                                 onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;">
-                            <div>
-                                <p class="font-semibold text-gray-900">Mr. Tayyab Hussain</p>
-                                <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
-                            </div>
+                         <div>
+                            <p class="font-semibold text-gray-900">Mr. Tayyab Hussain</p>
+                            <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
                         </div>
                     </div>
                     
                     <!-- NEW: Testimonial 3 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col">
+                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                        <!-- Image above -->
+                        <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Mas Arafat" class="rounded-full w-24 h-24 mx-auto mb-6 border-2 border-primary/50 object-cover"
+                             onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"
+                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
+                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic mb-6 flex-grow">
                             "He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."
                         </p>
-                         <div class="flex items-center">
-                            <!-- Added circular image -->
-                            <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Mas Arafat" class="rounded-full w-16 h-16 mr-4 border-2 border-primary/50 object-cover"
-                                 onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;">
-                            <div>
-                                <p class="font-semibold text-gray-900">Mr. Mas Arafat</p>
-                                <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
-                            </div>
+                         <div>
+                            <p class="font-semibold text-gray-900">Mr. Mas Arafat</p>
+                            <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
                         </div>
                     </div>
 
@@ -554,8 +557,8 @@
     </footer>
 
     <!-- ADDED: Gemini API Modal -->
-    <div id="gemini-modal" class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div id="gemini-modal-content" class="bg-white rounded-xl shadow-2xl w-full max-w-2xl transform transition-all">
+    <div id="gemini-modal" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div id="gemini-modal-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-2xl transform transition-all">
             <!-- Modal Header -->
             <div class="flex items-center justify-between p-4 border-b">
                 <h3 class="text-xl font-semibold text-gray-900" id="gemini-modal-title">✨ AI Helper</h3>
@@ -585,6 +588,35 @@
                 <button id="gemini-modal-generate" class="w-full sm:w-auto bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors flex items-center justify-center">
                     <span id="gemini-generate-text">Generate</span>
                     <i id="gemini-loading-spinner" data-lucide="loader-2" class="w-5 h-5 ml-2 animate-spin hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- NEW: Welcome Popup Modal -->
+    <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div id="welcome-popup-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all text-center">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-4 border-b">
+                <h3 class="text-xl font-semibold text-gray-900">Welcome to my Portfolio!</h3>
+                <button id="welcome-popup-close" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6">
+                <i data-lucide="user-round" class="w-16 h-16 text-primary mx-auto mb-4"></i>
+                <p class="text-lg text-gray-700 mb-2">
+                    I'm Syed Arbaz Ali Rizvi.
+                </p>
+                <p class="text-gray-600">
+                    Thank you for visiting my academic portfolio. I'm excited to share my projects and achievements with you.
+                </p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t">
+                 <button id="welcome-popup-ok" class="w-full bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors">
+                    View Portfolio
                 </button>
             </div>
         </div>
@@ -902,9 +934,58 @@
                 });
             }
 
+            // --- NEW: Welcome Popup Logic ---
+            const welcomePopup = document.getElementById('welcome-popup');
+            const welcomePopupClose = document.getElementById('welcome-popup-close');
+            const welcomePopupOk = document.getElementById('welcome-popup-ok');
+
+            function showWelcomePopup() {
+                if (welcomePopup) {
+                    welcomePopup.classList.remove('hidden');
+                    welcomePopup.classList.add('flex');
+                    // Re-draw icons for the new modal
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
+            }
+
+            function hideWelcomePopup() {
+                if (welcomePopup) {
+                    welcomePopup.classList.add('hidden');
+                    welcomePopup.classList.remove('flex');
+                }
+            }
+
+            function checkWelcomePopup() {
+                const lastVisitTime = localStorage.getItem('lastVisitTime');
+                const now = new Date().getTime();
+                const THIRTY_MINUTES_MS = 30 * 60 * 1000;
+
+                if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) {
+                    // If first visit or last visit was over 30 mins ago
+                    setTimeout(showWelcomePopup, 1000); // Show popup after 1 second
+                    localStorage.setItem('lastVisitTime', now.toString());
+                }
+            }
+
+            // Run the check
+            checkWelcomePopup();
+
+            // Add close listeners
+            if(welcomePopupClose) welcomePopupClose.addEventListener('click', hideWelcomePopup);
+            if(welcomePopupOk) welcomePopupOk.addEventListener('click', hideWelcomePopup);
+            if(welcomePopup) {
+                welcomePopup.addEventListener('click', (e) => {
+                    if (e.target === welcomePopup) {
+                        hideWelcomePopup();
+                    }
+                });
+            }
+
+
         }); // End of DOMContentLoaded listener
     </script>
 
 </body>
 
-</html>
