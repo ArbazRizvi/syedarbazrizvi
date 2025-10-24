@@ -18,6 +18,8 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <!-- Load TypeIt.js for Typing Animation -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- MOVED: Google Translate Init Script -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
@@ -81,7 +83,7 @@
         body { top: 0 !important; }
         .goog-te-banner-frame.skiptranslate { display: none !important; }
 
-        /* NEW: Mobile Menu Button Icon Animation */
+        /* Mobile Menu Button Icon Animation */
         #mobile-menu-button {
             position: relative; /* Needed for absolute positioning of icons */
             width: 40px; /* Ensure button has fixed size */
@@ -132,12 +134,12 @@
                     <a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a>
                     <a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
                     <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">View Resume</a>
+                    <!-- Main Google Translate Element -->
                     <div id="google_translate_element" class="ml-4"></div>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                     <div id="google_translate_element_mobile" class="mr-2"></div>
-                     <!-- MODIFIED: Added two icons inside the button -->
+                     <!-- REMOVED: Mobile-specific translate element here -->
                      <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none relative">
                         <i data-lucide="menu" class="icon icon-menu"></i>
                         <i data-lucide="x" class="icon icon-x"></i>
@@ -153,8 +155,9 @@
             <a href="#projects" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Projects</a>
             <a href="#testimonials" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Testimonials</a>
             <a href="#resume" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">View Resume</a>
+            <!-- MOVED: Translate element inside menu for mobile -->
             <div class="px-4 py-2 border-t">
-                 <p class="text-sm text-gray-500">Translate:</p>
+                 <p class="text-sm text-gray-500 mb-1">Translate:</p>
                  <div id="google_translate_element_mobile_menu"></div>
             </div>
         </div>
@@ -604,9 +607,35 @@
     </button>
 
     <!-- JavaScript -->
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     <script>
+        // --- Google Translate Init Function (MUST be global) ---
+        // Moved the definition here, BEFORE the DOMContentLoaded listener
+        function googleTranslateElementInit() {
+             console.log("googleTranslateElementInit called"); // Debug log
+             try {
+                new google.translate.TranslateElement({ 
+                    pageLanguage: 'en', 
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                    autoDisplay: false 
+                }, 'google_translate_element'); 
+                
+                // Also initialize the one in the mobile menu if it exists
+                if(document.getElementById('google_translate_element_mobile_menu')) {
+                    new google.translate.TranslateElement({ 
+                        pageLanguage: 'en', 
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                        autoDisplay: false 
+                    }, 'google_translate_element_mobile_menu');
+                } else {
+                     console.log("Mobile menu translate element not found yet");
+                }
+             } catch (e) {
+                 console.error("Error initializing Google Translate:", e);
+             }
+        }
+
+
+        // --- Main Script Execution ---
         document.addEventListener('DOMContentLoaded', () => {
             const GEMINI_API_KEY = "";
             const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
@@ -614,8 +643,13 @@
             // Initialize Lucide icons
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+                console.log("Lucide icons initialized."); // Debug log
             } else {
-                console.error("Lucide icons script not loaded.");
+                console.error("Lucide icons script not loaded BEFORE DOMContentLoaded.");
+                 // Try loading them again just in case
+                 if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                 }
             }
 
             // Mobile menu toggle
@@ -625,20 +659,26 @@
             if (menuButton) {
                 menuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
-                     // NEW: Toggle class on button for icon animation
                     menuButton.classList.toggle('menu-open'); 
+                     // Re-initialize translate in mobile menu when opened, if needed
+                     if (!mobileMenu.classList.contains('hidden') && typeof google !== 'undefined' && google.translate) {
+                         // Check if it's already initialized to avoid errors
+                         const mobileMenuTranslateDiv = document.getElementById('google_translate_element_mobile_menu');
+                         if (mobileMenuTranslateDiv && !mobileMenuTranslateDiv.hasChildNodes()) {
+                              googleTranslateElementInit(); // Re-call might be needed if it failed earlier
+                         }
+                     }
                 });
             }
 
-            if (mobileMenu) {
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        // NEW: Ensure button state resets when link is clicked
+             if (mobileMenu) {
+                 mobileMenu.querySelectorAll('a').forEach(link => {
+                     link.addEventListener('click', () => {
+                         mobileMenu.classList.add('hidden');
                          if (menuButton) menuButton.classList.remove('menu-open');
-                    });
-                });
-            }
+                     });
+                 });
+             }
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -647,18 +687,14 @@
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
                 });
             });
 
             // Set current year in footer
             const currentYearEl = document.getElementById('current-year');
-            if (currentYearEl) {
-                currentYearEl.textContent = new Date().getFullYear();
-            }
+            if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
             
             // Scroll-to-Top Button Logic
             const scrollToTopButton = document.getElementById('scroll-to-top');
@@ -714,123 +750,50 @@
             let currentSystemPrompt = "";
             let currentTargetElementId = "";
 
-            const modalConfig = { /* ... (keep config as before) ... */ 
+            const modalConfig = { 
                  'bio': { title: '✨ "About Me" Bio Helper', placeholder: 'Enter 3-5 keywords...\n- Major: CS\n- Passion: AI\n- Goal: PhD', systemPrompt: "You are a professional resume writer...", targetElement: 'about-me-content' },
                  'project': { title: '✨ Project Description Helper', placeholder: 'Enter bullet points...\n- Built X with Y\n- Solved Z', systemPrompt: "You are a technical writer...", targetElement: '' }
             };
             
-            window.openGeminiModal = (type, targetId = null) => {
+            window.openGeminiModal = (type, targetId = null) => { /* ... (keep function body as before) ... */ 
                 const config = modalConfig[type];
                 if (!config) return console.error("Unknown modal type:", type);
                 modalTitle.textContent = config.title;
                 modalInput.placeholder = config.placeholder;
                 currentSystemPrompt = config.systemPrompt;
-
                 let currentText = '';
-                if (type === 'bio') {
-                    currentTargetElementId = config.targetElement;
-                    const el = document.getElementById(currentTargetElementId);
-                    if(el) currentText = el.textContent.trim().replace(/\s+/g, ' '); 
-                } else if (type === 'project' && targetId) {
-                    currentTargetElementId = targetId;
-                    const el = document.getElementById(currentTargetElementId);
-                     // Avoid pre-filling if it's the placeholder text
-                    if(el && !el.textContent.includes('[')) {
-                       currentText = el.textContent.trim().replace(/\s+/g, ' ');
-                    }
-                }
-                 modalInput.value = currentText; // Set value after checks
-
-                modalOutput.value = "";
-                modalError.textContent = "";
-                modalError.classList.add('hidden');
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
+                if (type === 'bio') { currentTargetElementId = config.targetElement; const el = document.getElementById(currentTargetElementId); if(el) currentText = el.textContent.trim().replace(/\s+/g, ' '); } 
+                else if (type === 'project' && targetId) { currentTargetElementId = targetId; const el = document.getElementById(currentTargetElementId); if(el && !el.textContent.includes('[')) currentText = el.textContent.trim().replace(/\s+/g, ' '); }
+                modalInput.value = currentText; 
+                modalOutput.value = ""; modalError.textContent = ""; modalError.classList.add('hidden');
+                modal.classList.remove('hidden'); modal.classList.add('flex');
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
+            function closeModal() { if(modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); } resetGenerateButton(); }
+            function resetGenerateButton() { if(generateText) generateText.textContent = 'Generate'; if(loadingSpinner) loadingSpinner.classList.add('hidden'); if(modalGenerateButton) modalGenerateButton.disabled = false; }
+            function showLoadingButton() { if(generateText) generateText.textContent = 'Generating...'; if(loadingSpinner) loadingSpinner.classList.remove('hidden'); if(modalGenerateButton) modalGenerateButton.disabled = true; }
+            function showError(message) { if(modalError) { modalError.textContent = `Error: ${message}`; modalError.classList.remove('hidden'); } }
 
-            function closeModal() {
-                if(modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); }
-                resetGenerateButton();
+            async function handleGenerateClick() { /* ... (keep function body as before) ... */
+                 const userQuery = modalInput.value; if (!userQuery) return showError("Please enter some keywords or notes.");
+                 showLoadingButton(); modalOutput.value = ""; modalError.classList.add('hidden');
+                 try { const text = await callGeminiApiWithBackoff(currentSystemPrompt, userQuery); modalOutput.value = text; } 
+                 catch (error) { console.error("Gemini API call failed:", error); showError(error.message || "Failed to generate text."); } 
+                 finally { resetGenerateButton(); }
             }
-
-            function resetGenerateButton() {
-                if(generateText) generateText.textContent = 'Generate';
-                if(loadingSpinner) loadingSpinner.classList.add('hidden');
-                if(modalGenerateButton) modalGenerateButton.disabled = false;
+            async function callGeminiApiWithBackoff(systemPrompt, userQuery, retries = 3, delay = 1000) { /* ... (keep function body as before) ... */
+                  const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, };
+                  for (let i = 0; i <= retries; i++) {
+                      try {
+                          const response = await fetch(GEMINI_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                          if (!response.ok) { const errorBody = await response.json(); throw new Error(`API Error ${response.status}: ${errorBody.error?.message || response.statusText}`); }
+                          const result = await response.json(); const candidate = result.candidates?.[0];
+                          if (candidate?.content?.parts?.[0]?.text) return candidate.content.parts[0].text; else throw new Error("Invalid API response.");
+                      } catch (error) { console.warn(`Attempt ${i+1} failed. Retrying in ${delay}ms...`, error.message); if (i === retries) throw error; await new Promise(res => setTimeout(res, delay)); delay *= 2; }
+                  }
             }
-
-            function showLoadingButton() {
-                if(generateText) generateText.textContent = 'Generating...';
-                if(loadingSpinner) loadingSpinner.classList.remove('hidden');
-                if(modalGenerateButton) modalGenerateButton.disabled = true;
-            }
-
-            function showError(message) {
-                if(modalError) { modalError.textContent = `Error: ${message}`; modalError.classList.remove('hidden'); }
-            }
-
-            async function handleGenerateClick() {
-                const userQuery = modalInput.value;
-                if (!userQuery) return showError("Please enter some keywords or notes.");
-
-                showLoadingButton();
-                modalOutput.value = "";
-                modalError.classList.add('hidden');
-
-                try {
-                    const text = await callGeminiApiWithBackoff(currentSystemPrompt, userQuery);
-                    modalOutput.value = text;
-                } catch (error) {
-                    console.error("Gemini API call failed:", error);
-                    showError(error.message || "Failed to generate text.");
-                } finally {
-                    resetGenerateButton();
-                }
-            }
-
-            async function callGeminiApiWithBackoff(systemPrompt, userQuery, retries = 3, delay = 1000) {
-                 const payload = {
-                     contents: [{ parts: [{ text: userQuery }] }],
-                     systemInstruction: { parts: [{ text: systemPrompt }] },
-                 };
-                 for (let i = 0; i <= retries; i++) {
-                     try {
-                         const response = await fetch(GEMINI_API_URL, {
-                             method: 'POST',
-                             headers: { 'Content-Type': 'application/json' },
-                             body: JSON.stringify(payload)
-                         });
-                         if (!response.ok) {
-                             const errorBody = await response.json();
-                             throw new Error(`API Error ${response.status}: ${errorBody.error?.message || response.statusText}`);
-                         }
-                         const result = await response.json();
-                         const candidate = result.candidates?.[0];
-                         if (candidate?.content?.parts?.[0]?.text) {
-                             return candidate.content.parts[0].text;
-                         } else { throw new Error("Invalid API response."); }
-                     } catch (error) { 
-                         console.warn(`Attempt ${i+1} failed. Retrying in ${delay}ms...`, error.message);
-                         if (i === retries) throw error; 
-                         await new Promise(res => setTimeout(res, delay));
-                         delay *= 2; 
-                     }
-                 }
-            }
-
-            function copyToClipboard() {
-                if (!modalOutput.value) return;
-                try {
-                    modalOutput.select();
-                    document.execCommand('copy');
-                    const copySpan = modalCopyButton.querySelector('span');
-                    if(copySpan) copySpan.textContent = 'Copied!';
-                    setTimeout(() => { if(copySpan) copySpan.textContent = 'Copy Text'; }, 2000);
-                } catch (err) {
-                    console.error('Failed to copy text: ', err);
-                    showError("Failed to copy. Please copy manually.");
-                }
+            function copyToClipboard() { /* ... (keep function body as before) ... */
+                 if (!modalOutput.value) return; try { modalOutput.select(); document.execCommand('copy'); const copySpan = modalCopyButton.querySelector('span'); if(copySpan) copySpan.textContent = 'Copied!'; setTimeout(() => { if(copySpan) copySpan.textContent = 'Copy Text'; }, 2000); } catch (err) { console.error('Failed to copy text: ', err); showError("Failed to copy. Please copy manually."); }
             }
 
             if (modalCloseButton) modalCloseButton.addEventListener('click', closeModal);
@@ -843,30 +806,9 @@
             const welcomePopupClose = document.getElementById('welcome-popup-close');
             const welcomePopupOk = document.getElementById('welcome-popup-ok');
 
-            function showWelcomePopup() {
-                if (welcomePopup) {
-                    welcomePopup.classList.remove('hidden');
-                    welcomePopup.classList.add('flex');
-                    if (typeof lucide !== 'undefined') lucide.createIcons();
-                }
-            }
-
-            function hideWelcomePopup() {
-                if (welcomePopup) {
-                    welcomePopup.classList.add('hidden');
-                    welcomePopup.classList.remove('flex');
-                }
-            }
-
-            function checkWelcomePopup() {
-                const lastVisitTime = localStorage.getItem('lastVisitTime');
-                const now = new Date().getTime();
-                const THIRTY_MINUTES_MS = 30 * 60 * 1000;
-                if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) {
-                    setTimeout(showWelcomePopup, 1000); 
-                    localStorage.setItem('lastVisitTime', now.toString());
-                }
-            }
+            function showWelcomePopup() { if (welcomePopup) { welcomePopup.classList.remove('hidden'); welcomePopup.classList.add('flex'); if (typeof lucide !== 'undefined') lucide.createIcons(); } }
+            function hideWelcomePopup() { if (welcomePopup) { welcomePopup.classList.add('hidden'); welcomePopup.classList.remove('flex'); } }
+            function checkWelcomePopup() { const lastVisitTime = localStorage.getItem('lastVisitTime'); const now = new Date().getTime(); const THIRTY_MINUTES_MS = 30 * 60 * 1000; if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) { setTimeout(showWelcomePopup, 1000); localStorage.setItem('lastVisitTime', now.toString()); } }
             checkWelcomePopup();
 
             if(welcomePopupClose) welcomePopupClose.addEventListener('click', hideWelcomePopup);
@@ -876,26 +818,28 @@
             // --- Typing Animation Logic ---
              const typingElement = document.getElementById('typing-name');
              if (typingElement && typeof TypeIt !== 'undefined') {
-                 new TypeIt('#typing-name', { /* ... (keep config as before) ... */
-                      strings: ["Syed Arbaz Ali Rizvi"], speed: 100, deleteSpeed: 75, lifeLike: true, loop: true, breakLines: false, waitUntilVisible: true,
-                      afterString: async () => await new Promise(resolve => setTimeout(resolve, 10000)) 
-                 }).go();
+                 new TypeIt('#typing-name', { strings: ["Syed Arbaz Ali Rizvi"], speed: 100, deleteSpeed: 75, lifeLike: true, loop: true, breakLines: false, waitUntilVisible: true, afterString: async () => await new Promise(resolve => setTimeout(resolve, 10000)) }).go();
              } else if (!typingElement) console.error("Typing target #typing-name not found.");
              else console.error("TypeIt library not loaded.");
 
+             // --- Explicitly call Google Translate Init ---
+             // Sometimes the callback doesn't fire reliably or fast enough.
+             // We try calling it directly after a short delay, 
+             // ensuring the google object MIGHT be ready.
+             setTimeout(() => {
+                 if (typeof google !== 'undefined' && google.translate && typeof googleTranslateElementInit === 'function') {
+                    console.log("Attempting direct call to googleTranslateElementInit"); // Debug log
+                    googleTranslateElementInit();
+                 } else {
+                     console.log("Google Translate object not ready for direct call yet."); // Debug log
+                 }
+             }, 500); // Wait 500ms after DOM loaded
+
         }); // End of DOMContentLoaded listener
 
-        // --- Google Translate Init Function (MUST be global) ---
-        function googleTranslateElementInit() {
-             new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element'); 
-             if(document.getElementById('google_translate_element_mobile')) {
-                  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element_mobile');
-             }
-             if(document.getElementById('google_translate_element_mobile_menu')) {
-                  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element_mobile_menu');
-             }
-        }
-
+        // --- Google Translate Init Function (MUST remain global) ---
+        // Definition moved above DOMContentLoaded listener
+        
     </script>
 
 </body>
