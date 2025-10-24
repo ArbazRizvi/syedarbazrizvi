@@ -16,6 +16,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide.js"></script>
+    <!-- NEW: Load TypeIt.js for Typing Animation -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
@@ -78,13 +80,13 @@
             line-height: 1;
         }
         
-        /* NEW: Active nav link style */
+        /* Active nav link style */
         nav a.nav-active {
             color: #0D9488;
             font-weight: 600;
         }
 
-        /* NEW: Scroll-to-top button styles */
+        /* Scroll-to-top button styles */
         #scroll-to-top {
             position: fixed;
             bottom: 2rem;
@@ -109,7 +111,7 @@
             background-color: #0F766E;
         }
 
-        /* NEW: Scroll-reveal animation styles */
+        /* Scroll-reveal animation styles */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -120,12 +122,32 @@
             transform: translateY(0);
         }
 
-        /* NEW: Subtle background pattern */
+        /* Subtle background pattern */
         body {
             background-color: #F8FAFC; /* light-gray */
             background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px);
             background-size: 20px 20px;
         }
+
+        /* NEW: Style for typing cursor */
+        .ti-cursor {
+             display: inline-block;
+             width: 2px; /* Adjust width as needed */
+             height: 1em; /* Match the line height */
+             background-color: #0D9488; /* Primary color */
+             margin-left: 2px;
+             vertical-align: text-bottom;
+             animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Ensure the span takes up space even when empty */
+         #typing-name:empty::after {
+            content: '\00a0'; /* Non-breaking space */
+         }
+
     </style>
 </head>
 
@@ -176,8 +198,9 @@
                     <!-- Text Content -->
                     <div class="md:w-1/2 text-center md:text-left">
                         <span class="text-primary font-semibold">BS Computer Science Graduate</span>
+                        <!-- MODIFIED: Added span for typing animation -->
                         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 mb-6 leading-tight tracking-tight">
-                            Hi, I'm Syed Arbaz Ali Rizvi
+                            Hi, I'm <span id="typing-name"></span>
                         </h1>
                         <p class="text-lg text-gray-600 mb-8">
                             I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.
@@ -186,7 +209,6 @@
                             <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">
                                 View My Projects
                             </a>
-                            <!-- MODIFIED: Button style to match screenshot -->
                             <a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-transform hover:scale-105">
                                 Download CV
                             </a>
@@ -194,12 +216,11 @@
                     </div>
                     <!-- Image -->
                     <div class="md:w-1/2">
-                        <!-- UPDATED IMAGE -->
                         <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" 
                              alt="A professional headshot of Syed Arbaz Ali Rizvi"
                              class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover"
                              onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;"
-                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
+                             oncontextmenu="return false;"> 
                     </div>
                 </div>
             </div>
@@ -208,7 +229,6 @@
         <!-- Section 2: About Me -->
         <section id="about" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- MODIFIED: Added button -->
                 <div class="flex justify-center items-center gap-4 mb-6">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">About Me</h2>
                     <button onclick="openGeminiModal('bio')" title="Draft 'About Me' with AI" class="bg-primary/10 text-primary p-2 rounded-full hover:bg-primary/20 transition-colors">
@@ -227,7 +247,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Education & Skills</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Column 1: Education -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Education</h3>
@@ -237,7 +256,6 @@
                         <p class="text-sm text-gray-500 mt-1">CGPA: 3.41 / 4.00</p>
                     </div>
                     <!-- Column 2: Key Coursework -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Relevant Coursework</h3>
@@ -251,7 +269,6 @@
                         </ul>
                     </div>
                     <!-- Column 3: Skills -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray p-6 rounded-xl shadow-lg">
                         <i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i>
                         <h3 class="text-xl font-semibold text-gray-900 mb-3">Key Skills</h3>
@@ -382,13 +399,10 @@
         <section id="projects" class="py-24 md:py-32 bg-white fade-in-section shadow-sm">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Featured Projects</h2>
-                <!-- MODIFIED: Added 4th card, grid will auto-wrap -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project Card 1 (Final Year Project) -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <!-- UPDATED IMAGE -->
                         <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;">
                         <div class="p-6">
@@ -409,9 +423,7 @@
                     </div>
 
                     <!-- Project Card 2 (From Web Dev Course) -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <!-- UPDATED IMAGE -->
                         <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;">
                         <div class="p-6">
@@ -431,9 +443,7 @@
                     </div>
 
                     <!-- Project Card 3 (From ML Course) -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                         <!-- UPDATED IMAGE -->
                          <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
                          <div class="p-6">
@@ -453,7 +463,6 @@
                     </div>
                     
                     <!-- NEW: Project Card 4 (Future Project) -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg -->
                     <div class="bg-light-gray rounded-xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300 transform hover:scale-105 transition-transform duration-300">
                         <div class="p-6 h-full flex flex-col justify-center items-center text-center">
                             <i data-lucide="lightbulb" class="w-12 h-12 text-gray-400 mb-4"></i>
@@ -472,61 +481,48 @@
         <section id="testimonials" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16 tracking-tight">What My Professors Say</h2>
-                <!-- Changed to 3 columns -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     
                     <!-- Testimonial 1 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
-                        <!-- Image above -->
                         <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"
-                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
-                        <!-- Name and Title below image -->
+                             oncontextmenu="return false;"> 
                         <div class="mb-6">
                             <p class="font-semibold text-gray-900">Mr. Ali Raza Shah</p>
                             <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
                         </div>
-                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic flex-grow">
                             "Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."
                         </p>
                     </div>
 
                     <!-- Testimonial 2 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
-                        <!-- Image above -->
                         <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"
-                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
-                        <!-- Name and Title below image -->
+                             oncontextmenu="return false;"> 
                         <div class="mb-6">
                             <p class="font-semibold text-gray-900">Mr. Tayyab Hussain</p>
                             <p class="text-sm text-gray-600">Assistant Professor & FYP Supervisor, Dept. of CS, GCUF</p>
                         </div>
-                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic flex-grow">
                             "He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."
                         </p>
                     </div>
                     
                     <!-- NEW: Testimonial 3 -->
-                    <!-- MODIFIED: rounded-xl and shadow-lg, and layout -->
                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
-                        <!-- Image above -->
                         <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Mas Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover"
                              onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"
-                             oncontextmenu="return false;"> <!-- MODIFIED: Added image protection -->
-                        <!-- Name and Title below image -->
+                             oncontextmenu="return false;"> 
                         <div class="mb-6">
                             <p class="font-semibold text-gray-900">Mr. Mas Arafat</p>
                             <p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p>
                         </div>
-                        <!-- Text below -->
                         <p class="testimonial-quote text-lg text-gray-700 italic flex-grow">
                             "He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."
-                        </D>
+                        </p>
                     </div>
 
                 </div>
@@ -658,7 +654,6 @@
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Close mobile menu when a link is clicked
             if (menuButton) {
                 menuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
@@ -722,7 +717,7 @@
                         observer.unobserve(entry.target); // Only animate once
                     }
                 });
-            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+            }, { threshold: 0.1 }); 
 
             fadeSections.forEach(section => {
                 sectionObserver.observe(section);
@@ -733,9 +728,9 @@
             const sections = document.querySelectorAll('main section[id]');
 
             const navObserverOptions = {
-                root: null, // relative to viewport
-                rootMargin: '-50% 0px -50% 0px', // trigger when section is in the vertical center
-                threshold: 0 // any part passing the margin
+                root: null, 
+                rootMargin: '-50% 0px -50% 0px', 
+                threshold: 0 
             };
 
             const navObserver = new IntersectionObserver((entries) => {
@@ -744,10 +739,8 @@
                         const id = entry.target.getAttribute('id');
                         const activeLink = document.querySelector(`#desktop-nav-links a[href="#${id}"]`);
 
-                        // Remove active class from all links
                         navLinks.forEach(link => link.classList.remove('nav-active'));
                         
-                        // Add active class to the intersecting one
                         if (activeLink) {
                             activeLink.classList.add('nav-active');
                         }
@@ -762,7 +755,6 @@
 
             // --- ADDED: Gemini Modal & API Script ---
             const modal = document.getElementById('gemini-modal');
-            const modalContent = document.getElementById('gemini-modal-content');
             const modalCloseButton = document.getElementById('gemini-modal-close');
             const modalTitle = document.getElementById('gemini-modal-title');
             const modalInput = document.getElementById('gemini-modal-input');
@@ -788,11 +780,10 @@
                     title: '✨ Project Description Helper',
                     placeholder: 'Enter bullet points about your project...\n- Built a web app with React\n- Used Firebase for database\n- Solved problem X',
                     systemPrompt: "You are a technical writer. Convert the following bullet points into a concise, professional 2-sentence project description for a portfolio. Write only the description, without any intro or sign-off.",
-                    targetElement: '' // This will be set dynamically
+                    targetElement: '' 
                 }
             };
             
-            // Make functions globally accessible (since they are called from inline onclick)
             window.openGeminiModal = (type, targetId = null) => {
                 const config = modalConfig[type];
                 if (!config) {
@@ -806,11 +797,11 @@
                 if (type === 'bio') {
                     currentTargetElementId = config.targetElement;
                     const el = document.getElementById(currentTargetElementId);
-                    if(el) modalInput.value = el.textContent.trim().replace(/\s+/g, ' '); // Clean up whitespace
+                    if(el) modalInput.value = el.textContent.trim().replace(/\s+/g, ' '); 
                 } else if (type === 'project' && targetId) {
                     currentTargetElementId = targetId;
                     const el = document.getElementById(currentTargetElementId);
-                    if(el) modalInput.value = el.textContent.trim().replace(/\s+/g, ' '); // Clean up whitespace
+                    if(el) modalInput.value = el.textContent.trim().replace(/\s+/g, ' '); 
                 }
 
                 modalOutput.value = "";
@@ -818,7 +809,6 @@
                 modalError.classList.add('hidden');
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
-                // Re-call createIcons for the modal
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons();
                 }
@@ -915,8 +905,6 @@
 
             function copyToClipboard() {
                 if (!modalOutput.value) return;
-
-                // Use the 'execCommand' fallback
                 try {
                     modalOutput.select();
                     document.execCommand('copy');
@@ -931,12 +919,10 @@
                 }
             }
 
-            // Event Listeners
             if (modalCloseButton) modalCloseButton.addEventListener('click', closeModal);
             if (modalGenerateButton) modalGenerateButton.addEventListener('click', handleGenerateClick);
             if (modalCopyButton) modalCopyButton.addEventListener('click', copyToClipboard);
 
-            // Close modal if clicking on the backdrop
             if (modal) {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
@@ -954,7 +940,6 @@
                 if (welcomePopup) {
                     welcomePopup.classList.remove('hidden');
                     welcomePopup.classList.add('flex');
-                    // Re-draw icons for the new modal
                     if (typeof lucide !== 'undefined') {
                         lucide.createIcons();
                     }
@@ -974,16 +959,13 @@
                 const THIRTY_MINUTES_MS = 30 * 60 * 1000;
 
                 if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) {
-                    // If first visit or last visit was over 30 mins ago
-                    setTimeout(showWelcomePopup, 1000); // Show popup after 1 second
+                    setTimeout(showWelcomePopup, 1000); 
                     localStorage.setItem('lastVisitTime', now.toString());
                 }
             }
 
-            // Run the check
             checkWelcomePopup();
 
-            // Add close listeners
             if(welcomePopupClose) welcomePopupClose.addEventListener('click', hideWelcomePopup);
             if(welcomePopupOk) welcomePopupOk.addEventListener('click', hideWelcomePopup);
             if(welcomePopup) {
@@ -993,6 +975,28 @@
                     }
                 });
             }
+
+            // --- NEW: Typing Animation Logic ---
+             const typingElement = document.getElementById('typing-name');
+             if (typingElement && typeof TypeIt !== 'undefined') {
+                 new TypeIt('#typing-name', {
+                     strings: ["Syed Arbaz Ali Rizvi"],
+                     speed: 100, // Typing speed in ms
+                     deleteSpeed: 75, // Deleting speed in ms
+                     lifeLike: true, // More realistic typing
+                     loop: true, // Loop indefinitely
+                     breakLines: false, // Don't add breaks
+                     waitUntilVisible: true, // Wait until element is visible
+                     afterString: async (step, instance) => {
+                         // Pause for 10 seconds after typing
+                         await new Promise(resolve => setTimeout(resolve, 10000)); 
+                     }
+                 }).go();
+             } else if (!typingElement) {
+                 console.error("Typing animation target element #typing-name not found.");
+             } else {
+                 console.error("TypeIt library not loaded.");
+             }
 
 
         }); // End of DOMContentLoaded listener
