@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
+    
+    <!-- SEO Meta Tags Added -->
+    <meta name="author" content="Syed Arbaz Ali Rizvi">
+    <meta name="description" content="Explore the academic portfolio of Syed Arbaz Ali Rizvi, a BS Computer Science graduate (CGPA 3.41) specializing in AI and Machine Learning. See projects, testimonials, and certificates from Stanford and IBM.">
+    <meta name="keywords" content="Syed Arbaz Ali Rizvi, Arbaaz Rizvi, Academic Portfolio, BS Computer Science, GCUF, AI, Artificial Intelligence, Machine Learning, Data Science, Python, Stanford, IBM, Johns Hopkins, Web Developer, Portfolio">
+    <!-- End of SEO Meta Tags -->
+
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons -->
@@ -68,6 +75,48 @@
             opacity: 0.2;
             line-height: 1;
         }
+        
+        /* NEW: Active nav link style */
+        nav a.nav-active {
+            color: #0D9488;
+            font-weight: 600;
+        }
+
+        /* NEW: Scroll-to-top button styles */
+        #scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #0D9488;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            z-index: 50;
+        }
+        #scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scroll-to-top:hover {
+            background-color: #0F766E;
+        }
+
+        /* NEW: Scroll-reveal animation styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -82,7 +131,7 @@
                     <a href="#home" class="text-xl font-bold text-gray-900">Syed Arbaz Ali Rizvi</a>
                 </div>
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
+                <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8" id="desktop-nav-links">
                     <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
                     <a href="#education" class="text-gray-600 hover:text-primary transition-colors">Education</a>
                     <a href="#certifications" class="text-gray-600 hover:text-primary transition-colors">Certifications</a>
@@ -134,7 +183,8 @@
                     </div>
                     <!-- Image -->
                     <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x600/0D9488/FFFFFF?text=Arbaaz+Rizvi" 
+                        <!-- UPDATED IMAGE -->
+                        <img src="https://placehold.co/600x600/262626/FFFFFF?text=Syed+Arbaz+Ali+Rizvi" 
                              alt="A professional headshot of Syed Arbaz Ali Rizvi"
                              class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover"
                              onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
@@ -144,7 +194,7 @@
         </section>
 
         <!-- Section 2: About Me -->
-        <section id="about" class="py-20 md:py-28">
+        <section id="about" class="py-20 md:py-28 fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <!-- MODIFIED: Added button -->
                 <div class="flex justify-center items-center gap-4 mb-6">
@@ -160,7 +210,7 @@
         </section>
 
         <!-- Section 3: Education & Skills -->
-        <section id="education" class="py-20 md:py-28 bg-white">
+        <section id="education" class="py-20 md:py-28 bg-white fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Education & Skills</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -206,7 +256,7 @@
         </section>
 
         <!-- NEW SECTION: Certifications -->
-        <section id="certifications" class="py-20 md:py-28">
+        <section id="certifications" class="py-20 md:py-28 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Verifiable Certifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -300,14 +350,15 @@
         </section>
 
         <!-- Section 4: Projects -->
-        <section id="projects" class="py-20 md:py-28 bg-white">
+        <section id="projects" class="py-20 md:py-28 bg-white fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Featured Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project Card 1 (Final Year Project) -->
                     <div class="bg-light-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Final+Year+Project" alt="Screenshot of Project 1" class="w-full h-48 object-cover"
+                        <!-- UPDATED IMAGE -->
+                        <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=AI+Final+Year+Project" alt="Screenshot of Final Year Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;">
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -328,7 +379,8 @@
 
                     <!-- Project Card 2 (From Web Dev Course) -->
                     <div class="bg-light-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+Dev+Project" alt="Screenshot of Project 2" class="w-full h-48 object-cover"
+                        <!-- UPDATED IMAGE -->
+                        <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;">
                         <div class="p-6">
                              <div class="flex justify-between items-start mb-2">
@@ -348,7 +400,8 @@
 
                     <!-- Project Card 3 (From ML Course) -->
                     <div class="bg-light-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                         <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=AI/ML+Project" alt="Screenshot of Project 3" class="w-full h-48 object-cover"
+                         <!-- UPDATED IMAGE -->
+                         <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover"
                              onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
                          <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
@@ -371,7 +424,7 @@
         </section>
 
         <!-- NEW SECTION: Testimonials -->
-        <section id="testimonials" class="py-20 md:py-28 bg-light-gray">
+        <section id="testimonials" class="py-20 md:py-28 bg-light-gray fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">What My Professors Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -409,7 +462,7 @@
         </section>
 
         <!-- Section 5: Resume / CTA -->
-        <section id="resume" class="py-20 md:py-28 bg-primary text-white">
+        <section id="resume" class="py-20 md:py-28 bg-primary text-white fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Get My Full Resume</h2>
                 <p class="text-lg text-primary-100 mb-8">
@@ -477,6 +530,11 @@
             </div>
         </div>
     </div>
+    
+    <!-- NEW: Scroll-to-top button -->
+    <button id="scroll-to-top" title="Scroll to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
     <!-- JavaScript for smooth scrolling and mobile menu -->
     <script>
@@ -532,6 +590,73 @@
             if (currentYearEl) {
                 currentYearEl.textContent = new Date().getFullYear();
             }
+            
+            // --- NEW JS: Scroll-to-Top Button ---
+            const scrollToTopButton = document.getElementById('scroll-to-top');
+            
+            if (scrollToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        scrollToTopButton.classList.add('show');
+                    } else {
+                        scrollToTopButton.classList.remove('show');
+                    }
+                });
+
+                scrollToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // --- NEW JS: Scroll-Reveal Animations ---
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+            fadeSections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // --- NEW JS: Active Nav Link Highlighting ---
+            const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]');
+            const sections = document.querySelectorAll('main section[id]');
+
+            const navObserverOptions = {
+                root: null, // relative to viewport
+                rootMargin: '-50% 0px -50% 0px', // trigger when section is in the vertical center
+                threshold: 0 // any part passing the margin
+            };
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`#desktop-nav-links a[href="#${id}"]`);
+
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('nav-active'));
+                        
+                        // Add active class to the intersecting one
+                        if (activeLink) {
+                            activeLink.classList.add('nav-active');
+                        }
+                    }
+                });
+            }, navObserverOptions);
+
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+
 
             // --- ADDED: Gemini Modal & API Script ---
             const modal = document.getElementById('gemini-modal');
@@ -675,7 +800,7 @@
                         } else {
                             throw new Error("Invalid response structure from API.");
                         }
-                    } catch (error)D {
+                    } catch (error) { // Removed 'D' from catch(error)D
                         console.warn(`Attempt ${i+1} failed. Retrying in ${delay}ms...`, error.message);
                         if (i === retries) {
                             throw error; // Throw final error after all retries
