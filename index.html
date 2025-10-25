@@ -16,7 +16,6 @@
     
     <script>
         tailwind.config = {
-            // NEW: Added darkMode 'class' strategy
             darkMode: 'class',
             theme: {
                 extend: {
@@ -24,14 +23,13 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#14B8A6', // Teal 500
-                        'primary-dark': '#0D9488', // Teal 600
+                        'primary': '#14B8A6', 
+                        'primary-dark': '#0D9488',
                         'light-gray': '#F8FAFC',
-                        // NEW: Added colors for Dark Mode
-                        'dark-bg': '#111827', // Gray 900
-                        'dark-card': '#1F2937', // Gray 800
-                        'dark-text': '#F3F4F6', // Gray 100
-                        'dark-text-secondary': '#9CA3AF', // Gray 400
+                        'dark-bg': '#111827',
+                        'dark-card': '#1F2937',
+                        'dark-text': '#F3F4F6',
+                        'dark-text-secondary': '#9CA3AF',
                     }
                 },
             },
@@ -39,7 +37,7 @@
     </script>
     
     <style>
-        /* Custom scrollbar (Unchanged) */
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
@@ -49,39 +47,38 @@
         .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
         .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
 
-        /* Modals (Unchanged) */
+        /* Modals */
         .modal-content { opacity: 0; transform: scale(0.95); }
         .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); transition: opacity 200ms ease-out, transform 200ms ease-out; }
 
-        /* Testimonials (Unchanged) */
+        /* Testimonials */
         .testimonial-quote { position: relative; padding-left: 3rem; }
         .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
         
-        /* Active Nav Link (Unchanged) */
+        /* Active Nav Link */
         nav a.nav-active { color: #14B8A6; font-weight: 600; }
-        /* Dark mode active nav link */
         .dark nav a.nav-active { color: #14B8A6; }
 
-        /* Scroll-to-top Button (Unchanged) */
+        /* Scroll-to-top Button */
         #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
         #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
         #scroll-to-top:hover { background-color: #0D9488; }
 
-        /* Scroll-reveal Animation (Unchanged) */
+        /* Scroll-reveal Animation */
         .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* Background Pattern (Modified for Dark Mode) */
+        /* Background Pattern */
         body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
         .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
 
-        /* Typing Animation (Unchanged) */
+        /* Typing Animation */
         .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         #typing-name:empty::after { content: '\00a0'; }
         #typing-name { color: #14B8A6; }
 
-        /* Mobile Menu Button (Unchanged) */
+        /* Mobile Menu Button */
         #mobile-menu-button { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
         #mobile-menu-button .icon { position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
         #mobile-menu-button .icon-menu { transform: rotate(0deg); opacity: 1; }
@@ -89,7 +86,7 @@
         #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
         #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
 
-        /* NEW: Image Protection Class */
+        /* Image Protection Class */
         .protected-img {
             pointer-events: none;
             -webkit-user-select: none; /* Safari */
@@ -138,8 +135,8 @@
                         <span class="sr-only">Toggle dark mode</span>
                     </button>
                      <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none relative">
-                          <i data-lucide="menu" class="icon icon-menu"></i>
-                          <i data-lucide="x" class="icon icon-x"></i>
+                           <i data-lucide="menu" class="icon icon-menu"></i>
+                           <i data-lucide="x" class="icon icon-x"></i>
                      </button>
                 </div>
             </div>
@@ -159,7 +156,7 @@
     <main>
         <section id="home" class="min-h-[80vh] flex items-center bg-white dark:bg-dark-card shadow-sm">
              <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span><h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1><p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2">
-                <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" oncontextmenu="return false;" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
+                 <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" oncontextmenu="return false;" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
              </div></div></div>
         </section>
 
@@ -185,19 +182,19 @@
 
         <section id="projects" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
              <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Featured Projects</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Kids Guard Application (FYP)</h3>
+                 <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover protected-img" oncontextmenu="return false;" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Kids Guard Application (FYP)</h3>
                  <p id="project-desc-1" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">Developed 'Kids Guard' as my Final Year Project (Grade A), a parental control and child safety application. [This is a great spot to add 1-2 sentences on the tech used, e.g., Android, Firebase, etc.]</p>
                  <div class="flex gap-4">
                     <button data-modal-target="project-modal-1" class="text-primary font-medium hover:text-primary-dark">View Details</button>
                     <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
                  </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Web Development Project</h3>
+                 <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover protected-img" oncontextmenu="return false;" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Web Development Project</h3>
                  <p id="project-desc-2" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your JHU Web Dev course. Describe what you built using HTML, CSS, and JavaScript. e.g., "Built a responsive restaurant website..."]</p>
                  <div class="flex gap-4">
                     <button data-modal-target="project-modal-2" class="text-primary font-medium hover:text-primary-dark">View Details</button>
                     <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
                  </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">AI / Machine Learning Project</h3>
+                 <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover protected-img" oncontextmenu="return false;" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">AI / Machine Learning Project</h3>
                  <p id="project-desc-3" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your Stanford or IBM courses. Was it a regression model? A classifier? Describe it. e.g., "Trained a Scikit-learn model to predict..."]</p>
                  <div class="flex gap-4">
                     <button data-modal-target="project-modal-3" class="text-primary font-medium hover:text-primary-dark">View Details</button>
@@ -304,7 +301,7 @@
                 <button data-modal-close="project-modal-1" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><i data-lucide="x" class="w-6 h-6"></i></button>
             </div>
             <div class="p-6">
-                <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Kids Guard App" class="w-full h-64 object-cover rounded-lg mb-4">
+                <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Kids Guard App" class="w-full h-64 object-cover rounded-lg mb-4 protected-img" oncontextmenu="return false;">
                 <h4 class="text-lg font-semibold text-gray-800 dark:text-dark-text mb-2">Project Overview</h4>
                 <p class="text-gray-600 dark:text-dark-text-secondary mb-4">
                     'Kids Guard' was my final year project, awarded an 'A' grade. It's a comprehensive parental control and child safety application designed for Android. The primary goal was to create a tool for parents to monitor their child's digital activities and ensure their safety.
@@ -373,23 +370,20 @@
                 console.error("Lucide icons script not loaded.");
             }
             
-            // --- NEW: Dark Mode Logic ---
+            // --- Dark Mode Logic ---
             const htmlElement = document.documentElement;
             const desktopToggle = document.getElementById('dark-mode-toggle-desktop');
             const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
 
-            // Function to apply the saved theme
             function applyTheme() {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     htmlElement.classList.add('dark');
                 } else {
                     htmlElement.classList.remove('dark');
                 }
-                // Re-create icons after theme change if necessary
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
 
-            // Toggle function
             function toggleDarkMode() {
                 if (htmlElement.classList.contains('dark')) {
                     htmlElement.classList.remove('dark');
@@ -398,18 +392,14 @@
                     htmlElement.classList.add('dark');
                     localStorage.theme = 'dark';
                 }
-                // Re-create icons after theme change
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
 
-            // Add event listeners
             if (desktopToggle) desktopToggle.addEventListener('click', toggleDarkMode);
             if (mobileToggle) mobileToggle.addEventListener('click', toggleDarkMode);
-            
-            // Apply theme on load
             applyTheme();
 
-            // --- Mobile menu toggle (Unchanged) ---
+            // --- Mobile menu toggle ---
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -429,15 +419,14 @@
                    });
              }
 
-            // --- Smooth scrolling for anchor links (Unchanged) ---
+            // --- Smooth scrolling for anchor links ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) { 
                     e.preventDefault(); 
                     const targetId = this.getAttribute('href'); 
                     const targetElement = document.querySelector(targetId); 
                     if (targetElement) { 
-                        // MODIFICATION: Added offset for sticky header
-                        const headerOffset = 70; // Height of sticky header
+                        const headerOffset = 70; 
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                         
@@ -449,29 +438,30 @@
                 });
             });
 
-            // --- Set current year in footer (Unchanged) ---
+            // --- Set current year in footer ---
             const currentYearEl = document.getElementById('current-year');
             if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
             
-            // --- Scroll-to-Top Button Logic (Unchanged) ---
+            // --- Scroll-to-Top Button Logic ---
             const scrollToTopButton = document.getElementById('scroll-to-top');
             if (scrollToTopButton) { 
                 window.addEventListener('scroll', () => { scrollToTopButton.classList.toggle('show', window.scrollY > 300); });
                 scrollToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
             }
             
-            // --- Scroll-Reveal Animations Logic (Unchanged) ---
+            // --- Scroll-Reveal Animations Logic ---
             const fadeSections = document.querySelectorAll('.fade-in-section');
             const sectionObserver = new IntersectionObserver((entries, observer) => { 
                 entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
             }, { threshold: 0.1 }); 
             fadeSections.forEach(section => sectionObserver.observe(section));
 
-            // --- Active Nav Link Highlighting Logic (Unchanged) ---
-            const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]');
-            const sections = document.querySelectorAll('main section[id]');
+            // --- Active Nav Link Highlighting Logic ---
+
+            // FIX: Updated selector to EXCLUDE the resume button '[href="#resume"]'
+            const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]:not([href="#resume"])');
             
-            // MODIFICATION: Changed rootMargin to better highlight when section is centered
+            const sections = document.querySelectorAll('main section[id]');
             const navObserverOptions = { root: null, rootMargin: '-40% 0px -60% 0px', threshold: 0 }; 
             
             const navObserver = new IntersectionObserver((entries) => { 
@@ -486,7 +476,7 @@
             }, navObserverOptions);
             sections.forEach(section => navObserver.observe(section));
 
-            // --- Welcome Popup Logic (Unchanged) ---
+            // --- Welcome Popup Logic ---
             const welcomePopup = document.getElementById('welcome-popup');
             const welcomePopupClose = document.getElementById('welcome-popup-close');
             const welcomePopupOk = document.getElementById('welcome-popup-ok');
@@ -500,7 +490,7 @@
             if(welcomePopupOk) welcomePopupOk.addEventListener('click', hideWelcomePopup);
             if(welcomePopup) welcomePopup.addEventListener('click', (e) => { if (e.target === welcomePopup) hideWelcomePopup(); });
 
-            // --- Typing Animation Logic (Unchanged) ---
+            // --- Typing Animation Logic ---
              const typingElement = document.getElementById('typing-name');
              if (typingElement && typeof TypeIt !== 'undefined') { 
                    new TypeIt('#typing-name', { strings: ["Syed Arbaz Ali Rizvi"], speed: 100, deleteSpeed: 75, lifeLike: true, loop: true, breakLines: false, waitUntilVisible: true, afterString: async () => await new Promise(resolve => setTimeout(resolve, 10000)) }).go();
@@ -508,7 +498,7 @@
              else if (!typingElement) console.error("Typing target #typing-name not found.");
              else console.error("TypeIt library not loaded.");
              
-             // --- NEW: Project Modal Logic ---
+             // --- Project Modal Logic ---
             const modalTriggers = document.querySelectorAll('[data-modal-target]');
             const modalCloses = document.querySelectorAll('[data-modal-close]');
 
@@ -519,7 +509,6 @@
                     if (modal) {
                         modal.classList.remove('hidden');
                         modal.classList.add('flex');
-                        // Re-create icons in modal
                         if (typeof lucide !== 'undefined') lucide.createIcons();
                     }
                 });
@@ -536,7 +525,6 @@
                 });
             });
 
-            // Close modal on backdrop click
             document.querySelectorAll('.modal-backdrop').forEach(modal => {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
