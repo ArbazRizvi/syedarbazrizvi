@@ -38,10 +38,12 @@
     
     <style>
 
+        
+
         /* ensure anchored sections have breathing room under sticky header */
 :root { --header-offset: 96px; } /* tune this value if needed */
 main section { scroll-margin-top: calc(var(--header-offset)); }
-#resume { scroll-margin-top: calc(var(--header-offset)); }
+
 
 /* and for browsers that use :target directly */
 :target { scroll-margin-top: calc(var(--header-offset)); }
@@ -388,7 +390,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // compute header height dynamically (works on resize)
     const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 70;
     // extra offset so there's a little breathing room
-    const extraGap = 12;
+    const extraGap = 24;
     const offset = headerHeight + extraGap;
 
     // target position calculation
@@ -495,11 +497,18 @@ window.addEventListener('resize', () => {
             });
 
         }); // End of DOMContentLoaded listener
+
+
+        document.querySelectorAll('a[href="#resume"]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('resume').scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+
+        
     </script>
 
 </body>
 </html>
-
-
-
-
