@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
     
+    <!-- SEO Meta Tags Added -->
     <meta name="author" content="Syed Arbaz Ali Rizvi">
     <meta name="description" content="Explore the academic portfolio of Syed Arbaz Ali Rizvi, a BS Computer Science graduate (CGPA 3.41) specializing in AI and Machine Learning. See projects, testimonials, and certificates from Stanford and IBM.">
     <meta name="keywords" content="Syed Arbaz Ali Rizvi, Arbaaz Rizvi, Academic Portfolio, BS Computer Science, GCUF, AI, Artificial Intelligence, Machine Learning, Data Science, Python, Stanford, IBM, Johns Hopkins, Web Developer, Portfolio">
+    <!-- End of SEO Meta Tags -->
+
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Load TypeIt.js for Typing Animation -->
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,9 +35,8 @@
             },
         }
     </script>
+    <!-- Custom Styles -->
     <style>
-        /* ... (Keep existing styles) ... */
-        
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -79,12 +85,15 @@
 
 <body class="font-sans antialiased text-gray-800">
 
+    <!-- Header & Navigation -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
+                <!-- Logo / Name -->
                 <div class="flex-shrink-0">
                     <a href="#home" class="text-xl font-bold text-gray-900">Syed Arbaz Ali Rizvi</a>
                 </div>
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6" id="desktop-nav-links">
                     <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
                     <a href="#education" class="text-gray-600 hover:text-primary transition-colors">Education</a>
@@ -93,6 +102,7 @@
                     <a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
                     <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors">View Resume</a>
                 </div>
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                      <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none relative">
                          <i data-lucide="menu" class="icon icon-menu"></i>
@@ -101,6 +111,7 @@
                 </div>
             </div>
         </nav>
+        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">About</a>
             <a href="#education" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Education</a>
@@ -112,55 +123,106 @@
     </header>
 
     <main>
+        <!-- Section 1: Hero -->
         <section id="home" class="min-h-[80vh] flex items-center bg-white shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span><h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1><p class="text-lg text-gray-600 mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2"><img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;" oncontextmenu="return false;"></div></div></div>
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span><h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1><p class="text-lg text-gray-600 mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2"><img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;"></div></div></div>
         </section>
 
+        <!-- Section 2: About Me -->
         <section id="about" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">About Me</h2>
                 <p id="about-me-content" class="text-lg text-gray-600 mb-8">
                     My name is <b> `Syed Arbaz Ali Rizvi`</b>, and I am a recent graduate from <b> GC University Faisalabad (Layyah Campus) </b> with a Bachelor of Science in Computer Science  <b> (CGPA 3.41/4.00) </b>. My fascination with Artificial Intelligence and Machine Learning began during my coursework and was solidified by completing specializations from Stanford Online and IBM. I am driven to apply my skills in Python, data analysis, and web development to solve complex, real-world problems.
                 </p>
+                <!-- SUGGESTION: Add your goal here, e.g.: -->
+                <!-- <p class="text-lg text-gray-800 font-semibold mb-8">
+                    I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
+                </p> -->
             </div>
         </section>
 
+        <!-- Section 3: Education & Skills -->
         <section id="education" class="py-24 md:py-32 bg-white fade-in-section shadow-sm">
              <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Education & Skills</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-light-gray p-6 rounded-xl shadow-lg"><i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-3">Education</h3><p class="font-medium">BS Computer Science</p><p class="text-gray-600 mb-2">GC University Faisalabad, Layyah Campus</p><p class="text-sm text-gray-500">2020 - 2024</p><p class="text-sm text-gray-500 mt-1">CGPA: 3.41 / 4.00</p></div><div class="bg-light-gray p-6 rounded-xl shadow-lg"><i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-3">Relevant Coursework</h3><ul class="list-disc list-inside text-gray-600 space-y-1"><li>Artificial Intelligence (A-)</li><li>Web Design and Development (A-)</li><li>Data Structure and Algorithms (B)</li><li>Database Systems (B+)</li><li>Compiler Construction (A-)</li><li>Final Year Project (A)</li></ul></div><div class="bg-light-gray p-6 rounded-xl shadow-lg"><i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-3">Key Skills</h3><div class="flex flex-wrap gap-2"><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">PyTorch</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Data Science</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">HTML/CSS</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">JavaScript</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span></div></div></div></div>
         </section>
 
+        <!-- Section 4: Certifications -->
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Data Science Methodology</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Elements of AI</h3><p class="text-gray-600 text-sm mb-4">University of Helsinki</p></div><a href="https://certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">What is Data Science?</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Tools for Data Science</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div></div></div>
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Cert 1 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 2 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 3 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 4 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Data Science Methodology</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 5 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Elements of AI</h3><p class="text-gray-600 text-sm mb-4">University of Helsinki</p></div><a href="https://certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 6 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">What is Data Science?</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div><!-- Cert 7 --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 mb-2">Tools for Data Science</h3><p class="text-gray-600 text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray p-4 text-center font-medium text-primary hover:bg-gray-200 transition-colors">Verify Certificate</a></div></div></div>
         </section>
 
+        <!-- Section 5: Projects -->
         <section id="projects" class="py-24 md:py-32 bg-white fade-in-section shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Featured Projects</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"><img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">Kids Guard Application (FYP)</h3><button onclick="openGeminiModal('project', 'project-desc-1')" title="Draft description with AI" class="bg-primary/10 text-primary p-2 rounded-full hover:bg-primary/20 transition-colors flex-shrink-0"><i data-lucide="sparkles" class="w-5 h-5"></i></button></div><p id="project-desc-1" class="text-gray-600 text-sm mb-4">Developed 'Kids Guard' as my Final Year Project (Grade A), a parental control and child safety application. [Click the ✨ to add more details about the technology and features!]</p><div class="flex gap-4"><a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a><a href="#" class="text-primary font-medium hover:text-primary-dark">Live Demo</a></div></div></div><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"><img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">Web Development Project</h3><button onclick="openGeminiModal('project', 'project-desc-2')" title="Draft description with AI" class="bg-primary/10 text-primary p-2 rounded-full hover:bg-primary/20 transition-colors flex-shrink-0"><i data-lucide="sparkles" class="w-5 h-5"></i></button></div><p id="project-desc-2" class="text-gray-600 text-sm mb-4">[Project from your JHU Web Dev course. Describe what you built using HTML, CSS, and JavaScript.]</p><div class="flex gap-4"><a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a></div></div></div><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"><img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">AI / Machine Learning Project</h3><button onclick="openGeminiModal('project', 'project-desc-3')" title="Draft description with AI" class="bg-primary/10 text-primary p-2 rounded-full hover:bg-primary/20 transition-colors flex-shrink-0"><i data-lucide="sparkles" class="w-5 h-5"></i></button></div><p id="project-desc-3" class="text-gray-600 text-sm mb-4">[Project from your Stanford or IBM courses. Was it a regression model? A classifier? Describe it.]</p><div class="flex gap-4"><a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a></div></div></div><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300 transform hover:scale-105 transition-transform duration-300"><div class="p-6 h-full flex flex-col justify-center items-center text-center"><i data-lucide="lightbulb" class="w-12 h-12 text-gray-400 mb-4"></i><h3 class="text-xl font-semibold text-gray-700 mb-2">Future AI Project</h3><p class="text-gray-500 text-sm">I am currently conceptualizing a new project in the field of deep learning or NLP. More details coming soon!</p></div></div></div></div>
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 tracking-tight">Featured Projects</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 --><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <!-- SUGGESTION: Replace this placeholder with a real screenshot -->
+                <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">Kids Guard Application (FYP)</h3>
+                    <!-- MODIFICATION: Removed AI Sparkle Button -->
+                </div>
+                <!-- SUGGESTION: Write a more detailed description yourself -->
+                <p id="project-desc-1" class="text-gray-600 text-sm mb-4">Developed 'Kids Guard' as my Final Year Project (Grade A), a parental control and child safety application. [This is a great spot to add 1-2 sentences on the tech used, e.g., Android, Firebase, etc.]</p>
+                <div class="flex gap-4">
+                    <!-- SUGGESTION: Add a "View Details" button that opens a modal -->
+                    <!-- <button class="text-primary font-medium hover:text-primary-dark">View Details</button> -->
+                    <a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a><a href="#" class="text-primary font-medium hover:text-primary-dark">Live Demo</a></div></div></div><!-- Project 2 --><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <!-- SUGGESTION: Replace this placeholder with a real screenshot -->
+                <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">Web Development Project</h3>
+                    <!-- MODIFICATION: Removed AI Sparkle Button -->
+                </div>
+                <!-- SUGGESTION: Write a real description -->
+                <p id="project-desc-2" class="text-gray-600 text-sm mb-4">[Project from your JHU Web Dev course. Describe what you built using HTML, CSS, and JavaScript. e.g., "Built a responsive restaurant website..."]</p>
+                <div class="flex gap-4">
+                    <!-- <button class="text-primary font-medium hover:text-primary-dark">View Details</button> -->
+                    <a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a></div></div></div><!-- Project 3 --><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <!-- SUGGESTION: Replace this placeholder with a real screenshot -->
+                <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><div class="flex justify-between items-start mb-2"><h3 class="text-xl font-semibold text-gray-900">AI / Machine Learning Project</h3>
+                    <!-- MODIFICATION: Removed AI Sparkle Button -->
+                </div>
+                <!-- SUGGESTION: Write a real description -->
+                <p id="project-desc-3" class="text-gray-600 text-sm mb-4">[Project from your Stanford or IBM courses. Was it a regression model? A classifier? Describe it. e.g., "Trained a Scikit-learn model to predict..."]</p>
+                <div class="flex gap-4">
+                    <!-- <button class="text-primary font-medium hover:text-primary-dark">View Details</button> -->
+                    <a href="#" class="text-primary font-medium hover:text-primary-dark">GitHub</a></div></div></div><!-- Project 4 --><div class="bg-light-gray rounded-xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300 transform hover:scale-105 transition-transform duration-300"><div class="p-6 h-full flex flex-col justify-center items-center text-center"><i data-lucide="lightbulb" class="w-12 h-12 text-gray-400 mb-4"></i><h3 class="text-xl font-semibold text-gray-700 mb-2">Future AI Project</h3><p class="text-gray-500 text-sm">I am currently conceptualizing a new project in the field of deep learning or NLP. More details coming soon!</p></div></div></div></div>
         </section>
 
+        <!-- Section 6: Testimonials -->
         <section id="testimonials" class="py-24 md:py-32 fade-in-section">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16 tracking-tight">What My Professors Say</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center"><img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;" oncontextmenu="return false;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Ali Raza Shah</p><p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."</p></div><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center"><img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https" oncontextmenu="return false;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Tayyab Hussain</p><p class="text-sm text-gray-600">Assistant Professor & FYP Supervisor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."</p></div><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center"><img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https" oncontextmenu="return false;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Yasir Arafat</p><p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."</p></div></div></div>
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16 tracking-tight">What My Professors Say</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"><!-- Testimonial 1 --><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                <!-- MODIFICATION: Removed oncontextmenu -->
+                <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Ali Raza Shah</p><p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."</p></div><!-- Testimonial 2 --><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                <!-- MODIFICATION: Removed oncontextmenu -->
+                <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Tayyab Hussain</p><p class="text-sm text-gray-600">Assistant Professor & FYP Supervisor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."</p></div><!-- Testimonial 3 --><div class="bg-white p-8 rounded-xl shadow-lg flex flex-col text-center">
+                <!-- MODIFICATION: Removed oncontextmenu -->
+                <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900">Mr. Yasir Arafat</p><p class="text-sm text-gray-600">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 italic flex-grow">"He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."</p></div></div></div>
         </section>
 
+        <!-- Section 7: Resume / CTA -->
         <section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
              <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
                    <p class="text-lg text-primary-100 mb-8">Download my complete CV, which includes all coursework, experience, and the full recommendation letters.</p>
+                   <!-- SUGGESTION: Replace this link with your actual PDF file -->
                    <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">Download Resume (PDF)</a>
               </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div class="flex justify-center space-x-6 mb-6">
-                   <a href="[YOUR_LINKEDIN_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                   <a href="[YOUR_GITHUB_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="w-6 h-6"></i></a>
-                   <a href="mailto:[YOUR_EMAIL@gmail.com]" class="hover:text-white"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                   <!-- SUGGESTION: Replace these links with your actual profiles -->
+                   <a href="[YOUR_LINKEDIN_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                   <a href="[YOUR_GITHUB_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                   <a href="mailto:[YOUR_EMAIL@gmail.com]" class="hover:text-white" aria-label="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                   <!-- SUGGESTION: Add Google Scholar / ORCID for academic focus -->
+                   <!-- <a href="[YOUR_GOOGLE_SCHOLAR_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i data-lucide="graduation-cap" class="w-6 h-6"></i></a> -->
               </div>
               <p>© <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
          </div>
     </footer>
 
+    <!-- Gemini API Modal (Still available for you to use, but not visible to professors) -->
     <div id="gemini-modal" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div id="gemini-modal-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-2xl transform transition-all">
               <div class="flex items-center justify-between p-4 border-b"><h3 class="text-xl font-semibold text-gray-900" id="gemini-modal-title">✨ AI Helper</h3><button id="gemini-modal-close" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-6 h-6"></i></button></div>
@@ -169,6 +231,7 @@
          </div>
     </div>
     
+    <!-- Welcome Popup Modal -->
     <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div id="welcome-popup-content" class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all text-center">
               <div class="flex items-center justify-between p-4 border-b"><h3 class="text-xl font-semibold text-gray-900">Welcome to my Portfolio!</h3><button id="welcome-popup-close" class="text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-6 h-6"></i></button></div>
@@ -177,14 +240,16 @@
          </div>
     </div>
     
+    <!-- Scroll-to-top button -->
     <button id="scroll-to-top" title="Scroll to top">
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
+    <!-- JavaScript -->
     <script>
         // --- Main Script Execution ---
         document.addEventListener('DOMContentLoaded', () => {
-            const GEMINI_API_KEY = "";
+            const GEMINI_API_KEY = ""; // As discussed, keep this empty.
             const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
             
             // Define Modal elements first
@@ -281,16 +346,15 @@
                  'project': { title: '✨ Project Description Helper', placeholder: 'Enter bullet points...', systemPrompt: "You are a technical writer...", targetElement: '' }
             };
             
+            // MODIFICATION: This function is still here so you can use it, but it is no longer triggered by project buttons
             window.openGeminiModal = (type, targetId = null) => { 
                  const config = modalConfig[type];
                  if (!config) return console.error("Unknown modal type:", type);
-                 // Check if elements exist before assigning
                  if (modalTitle) modalTitle.textContent = config.title;
                  if (modalInput) modalInput.placeholder = config.placeholder;
                  currentSystemPrompt = config.systemPrompt;
                  let currentText = '';
                  if (type === 'bio') { 
-                     // No bio button anymore, but keep logic just in case
                      currentTargetElementId = config.targetElement; 
                      const el = document.getElementById(currentTargetElementId); 
                      if(el && !el.textContent.includes('`')) currentText = el.textContent.trim().replace(/\s+/g, ' '); 
@@ -332,10 +396,23 @@
                       } catch (error) { console.warn(`Attempt ${i+1} failed. Retrying in ${delay}ms...`, error.message); if (i === retries) throw error; await new Promise(res => setTimeout(res, delay)); delay *= 2; }
                   }
             }
+            
+            // MODIFICATION: Replaced deprecated execCommand with modern Clipboard API
             function copyToClipboard() { 
-                 if (!modalOutput || !modalOutput.value) return; 
-                 try { modalOutput.select(); document.execCommand('copy'); const copySpan = modalCopyButton ? modalCopyButton.querySelector('span') : null; if(copySpan) copySpan.textContent = 'Copied!'; setTimeout(() => { if(copySpan) copySpan.textContent = 'Copy Text'; }, 2000); } 
-                 catch (err) { console.error('Failed to copy text: ', err); showError("Failed to copy. Please copy manually."); }
+                if (!modalOutput || !modalOutput.value) return; 
+                
+                navigator.clipboard.writeText(modalOutput.value).then(() => {
+                    // Success
+                    const copySpan = modalCopyButton ? modalCopyButton.querySelector('span') : null; 
+                    if(copySpan) {
+                        copySpan.textContent = 'Copied!'; 
+                        setTimeout(() => { if(copySpan) copySpan.textContent = 'Copy Text'; }, 2000); 
+                    }
+                }).catch(err => {
+                    // Error
+                    console.error('Failed to copy text: ', err); 
+                    showError("Failed to copy. Please copy manually.");
+                });
             }
 
             // Ensure event listeners are attached only if elements exist
@@ -371,6 +448,4 @@
     </script>
 
 </body>
-
 </html>
-```
