@@ -37,7 +37,55 @@
     </script>
     
     <style>
-        /* ... (Saari CSS styles wesi hi hain, koi change nahi) ... */
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
+        /* Dark mode scrollbar */
+        .dark ::-webkit-scrollbar-track { background: #1F2937; }
+        .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
+
+        /* Modals */
+        .modal-content { opacity: 0; transform: scale(0.95); }
+        .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); transition: opacity 200ms ease-out, transform 200ms ease-out; }
+
+        /* Testimonials */
+        .testimonial-quote { position: relative; padding-left: 3rem; }
+        .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
+        
+        /* Active Nav Link */
+        nav a.nav-active { color: #14B8A6; font-weight: 600; }
+        /* Dark mode active nav link */
+        .dark nav a.nav-active { color: #14B8A6; }
+
+        /* Scroll-to-top Button */
+        #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
+        #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        #scroll-to-top:hover { background-color: #0D9488; }
+
+        /* Scroll-reveal Animation */
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* Background Pattern */
+        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
+
+        /* FIX 1: Typing Animation (TEAL COLOR WAPIS AA GAYA) */
+        .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #typing-name:empty::after { content: '\00a0'; }
+        #typing-name { color: #14B8A6; }
+
+        /* FIX 2: Mobile Menu Button (STACKING ISSUE FIXED) */
+        #mobile-menu-button { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+        #mobile-menu-button .icon { position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+        #mobile-menu-button .icon-menu { transform: rotate(0deg); opacity: 1; }
+        #mobile-menu-button .icon-x { transform: rotate(-90deg); opacity: 0; }
+        #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
+        #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
 
         /* Image Protection Class */
         .protected-img {
@@ -107,7 +155,9 @@
 
     <main>
         <section id="home" class="min-h-[80vh] flex items-center bg-white dark:bg-dark-card shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span><h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1><p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1>
+                <p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2">
                  <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
              </div></div></div>
         </section>
@@ -163,7 +213,7 @@
         </section>
 
         <section id="research" class="py-24 md:py-32 fade-in-section">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Research & Publications</h2>
                 <div class="space-y-8">
                     <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
@@ -247,10 +297,10 @@
        </div>
     </footer>
     
-    <div id="welcome-popup" class...</div>
-    <div id="project-modal-1" class...</div>
-    <div id="project-modal-2" class...</div>
-    <div id="project-modal-3" class...</div>
+    <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
     
     <button id="scroll-to-top" title="Scroll to top">
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
@@ -260,8 +310,6 @@
         // --- Main Script Execution ---
         document.addEventListener('DOMContentLoaded', () => {
 
-            // ... (Saara purana JavaScript waisa hi hai) ...
-            
             // Initialize Lucide icons
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -416,17 +464,14 @@
             });
             
             
-            // CHANGE 2: Keyboard shortcuts ko block karne ka naya code
+            // --- Keyboard Shortcut Blocking ---
             document.addEventListener('keydown', function(event) {
-                // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C ko block karna
                 if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) {
                     event.preventDefault();
                 }
-                // Ctrl+U ko block karna
                 if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
                     event.preventDefault();
                 }
-                // F12 ko block karna
                 if (event.key === 'F12') {
                     event.preventDefault();
                 }
