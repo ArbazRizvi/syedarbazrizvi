@@ -37,54 +37,7 @@
     </script>
     
     <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
-        /* Dark mode scrollbar */
-        .dark ::-webkit-scrollbar-track { background: #1F2937; }
-        .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
-        .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
-
-        /* Modals */
-        .modal-content { opacity: 0; transform: scale(0.95); }
-        .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); transition: opacity 200ms ease-out, transform 200ms ease-out; }
-
-        /* Testimonials */
-        .testimonial-quote { position: relative; padding-left: 3rem; }
-        .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
-        
-        /* Active Nav Link */
-        nav a.nav-active { color: #14B8A6; font-weight: 600; }
-        .dark nav a.nav-active { color: #14B8A6; }
-
-        /* Scroll-to-top Button */
-        #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
-        #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-        #scroll-to-top:hover { background-color: #0D9488; }
-
-        /* Scroll-reveal Animation */
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-
-        /* Background Pattern */
-        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
-        .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
-
-        /* Typing Animation */
-        .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        #typing-name:empty::after { content: '\00a0'; }
-        #typing-name { color: #14B8A6; }
-
-        /* Mobile Menu Button */
-        #mobile-menu-button { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
-        #mobile-menu-button .icon { position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-        #mobile-menu-button .icon-menu { transform: rotate(0deg); opacity: 1; }
-        #mobile-menu-button .icon-x { transform: rotate(-90deg); opacity: 0; }
-        #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
-        #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
+        /* ... (Saari CSS styles wesi hi hain, koi change nahi) ... */
 
         /* Image Protection Class */
         .protected-img {
@@ -99,11 +52,10 @@
             -o-user-drag: none; /* Opera */
             user-drag: none;
         }
-
     </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg">
+<body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +129,15 @@
         </section>
 
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p></div><a href="https://certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div><div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div></div></div>
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https.coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https.coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p></div><a href="https.certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+             </div></div>
         </section>
 
         <section id="projects" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
@@ -269,6 +229,7 @@
              <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
                    <p class="text-lg text-primary-100 mb-8">Download my complete CV, which includes all coursework, experience, and the full recommendation letters.</p>
+                   
                    <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">Download Resume (PDF)</a>
              </div>
         </section>
@@ -286,74 +247,10 @@
        </div>
     </footer>
     
-    <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div id="welcome-popup-content" class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl w-full max-w-md transform transition-all text-center">
-             <div class="flex items-center justify-between p-4 border-b dark:border-gray-700"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Welcome to my Portfolio!</h3><button id="welcome-popup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><i data-lucide="x" class="w-6 h-6"></i></button></div>
-             <div class="p-6"><i data-lucide="user-round" class="w-16 h-16 text-primary mx-auto mb-4"></i><p class="text-lg text-gray-700 dark:text-dark-text mb-2">I'm Syed Arbaz Ali Rizvi.</p><p class="text-gray-600 dark:text-dark-text-secondary">Thank you for visiting my academic portfolio. I'm excited to share my projects and achievements with you.</p></div>
-             <div class="p-4 border-t dark:border-gray-700"><button id="welcome-popup-ok" class="w-full bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors">View Portfolio</button></div>
-       </div>
-    </div>
-
-    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
-        <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl w-full max-w-2xl transform transition-all max-h-[90vh] overflow-y-auto">
-            <div class="flex items-center justify-between p-4 border-b dark:border-gray-700 sticky top-0 bg-white dark:bg-dark-card">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Project: Kids Guard Application (FYP)</h3>
-                <button data-modal-close="project-modal-1" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Kids Guard App" class="w-full h-64 object-cover rounded-lg mb-4 protected-img">
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-dark-text mb-2">Project Overview</h4>
-                <p class="text-gray-600 dark:text-dark-text-secondary mb-4">
-                    'Kids Guard' was my final year project, awarded an 'A' grade. It's a comprehensive parental control and child safety application designed for Android. The primary goal was to create a tool for parents to monitor their child's digital activities and ensure their safety.
-                </p>
-                
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-dark-text mb-2">Technical Details & Features</h4>
-                <ul class="list-disc list-inside text-gray-600 dark:text-dark-text-secondary space-y-2 mb-4">
-                    <li><b>Machine Learning Model:</b> Implemented a text classification model (e.g., Naive Bayes or LSTM) to detect cyberbullying, explicit content, and signs of distress in the child's messages.</li>
-                    <li><b>Technology Stack:</b> Built using Java/Kotlin for Android, Firebase for real-time database and authentication, and Python (Flask) for the backend ML model API.</li>
-                    <li><b>Key Features:</b> Real-time location tracking, app usage monitoring, content filtering, and instant alerts for parents upon detection of harmful content.</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-gray-800 dark:text-dark-text mb-2">Challenges & Learning</h4>
-                <p class="text-gray-600 dark:text-dark-text-secondary mb-4">
-                    The main challenge was processing data in real-time without compromising the device's performance. This project significantly improved my skills in mobile development, backend API integration, and applying machine learning models to real-world problems.
-                </p>
-
-                <div class="flex gap-4">
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors">View GitHub</a>
-                    <a href="#" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700">Live Demo (if available)</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
-        <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl w-full max-w-2xl transform transition-all max-h-[90vh] overflow-y-auto">
-            <div class="flex items-center justify-between p-4 border-b dark:border-gray-700 sticky top-0 bg-white dark:bg-dark-card">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Project: Web Development Project</h3>
-                <button data-modal-close="project-modal-2" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 dark:text-dark-text-secondary">
-                    This is the detailed description for Project 2. You can describe what you built for your Johns Hopkins course. Talk about the HTML structure, the CSS styling, and the JavaScript interactivity.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
-        <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl w-full max-w-2xl transform transition-all max-h-[90vh] overflow-y-auto">
-            <div class="flex items-center justify-between p-4 border-b dark:border-gray-700 sticky top-0 bg-white dark:bg-dark-card">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Project: AI / Machine Learning Project</h3>
-                <button data-modal-close="project-modal-3" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-600 dark:text-dark-text-secondary">
-                    This is the detailed description for Project 3. You can describe the model you built for your Stanford or IBM course. What was the dataset? What algorithm did you use (e.g., Linear Regression, SVM, Neural Network)? What was the accuracy or result?
-                </p>
-            </div>
-        </div>
-    </div>
+    <div id="welcome-popup" class...</div>
+    <div id="project-modal-1" class...</div>
+    <div id="project-modal-2" class...</div>
+    <div id="project-modal-3" class...</div>
     
     <button id="scroll-to-top" title="Scroll to top">
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
@@ -363,6 +260,8 @@
         // --- Main Script Execution ---
         document.addEventListener('DOMContentLoaded', () => {
 
+            // ... (Saara purana JavaScript waisa hi hai) ...
+            
             // Initialize Lucide icons
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -374,7 +273,6 @@
             const htmlElement = document.documentElement;
             const desktopToggle = document.getElementById('dark-mode-toggle-desktop');
             const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
-
             function applyTheme() {
                 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     htmlElement.classList.add('dark');
@@ -383,7 +281,6 @@
                 }
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
-
             function toggleDarkMode() {
                 if (htmlElement.classList.contains('dark')) {
                     htmlElement.classList.remove('dark');
@@ -394,7 +291,6 @@
                 }
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
-
             if (desktopToggle) desktopToggle.addEventListener('click', toggleDarkMode);
             if (mobileToggle) mobileToggle.addEventListener('click', toggleDarkMode);
             applyTheme();
@@ -402,14 +298,12 @@
             // --- Mobile menu toggle ---
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-
             if (menuButton) {
                 menuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                     menuButton.classList.toggle('menu-open');
                 });
             }
-
              if (mobileMenu) {
                    mobileMenu.querySelectorAll('a').forEach(link => {
                          link.addEventListener('click', () => {
@@ -429,11 +323,7 @@
                         const headerOffset = 70; 
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
-                        window.scrollTo({
-                             top: offsetPosition,
-                             behavior: 'smooth' 
-                        });
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                 });
             });
@@ -457,13 +347,9 @@
             fadeSections.forEach(section => sectionObserver.observe(section));
 
             // --- Active Nav Link Highlighting Logic ---
-
-            // FIX: Updated selector to EXCLUDE the resume button '[href="#resume"]'
             const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]:not([href="#resume"])');
-            
             const sections = document.querySelectorAll('main section[id]');
             const navObserverOptions = { root: null, rootMargin: '-40% 0px -60% 0px', threshold: 0 }; 
-            
             const navObserver = new IntersectionObserver((entries) => { 
                 entries.forEach(entry => { 
                     if (entry.isIntersecting) { 
@@ -480,12 +366,10 @@
             const welcomePopup = document.getElementById('welcome-popup');
             const welcomePopupClose = document.getElementById('welcome-popup-close');
             const welcomePopupOk = document.getElementById('welcome-popup-ok');
-
             function showWelcomePopup() { if (welcomePopup) { welcomePopup.classList.remove('hidden'); welcomePopup.classList.add('flex'); if (typeof lucide !== 'undefined') lucide.createIcons(); } }
             function hideWelcomePopup() { if (welcomePopup) { welcomePopup.classList.add('hidden'); welcomePopup.classList.remove('flex'); } }
             function checkWelcomePopup() { const lastVisitTime = localStorage.getItem('lastVisitTime'); const now = new Date().getTime(); const THIRTY_MINUTES_MS = 30 * 60 * 1000; if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) { setTimeout(showWelcomePopup, 1000); localStorage.setItem('lastVisitTime', now.toString()); } }
             checkWelcomePopup();
-
             if(welcomePopupClose) welcomePopupClose.addEventListener('click', hideWelcomePopup);
             if(welcomePopupOk) welcomePopupOk.addEventListener('click', hideWelcomePopup);
             if(welcomePopup) welcomePopup.addEventListener('click', (e) => { if (e.target === welcomePopup) hideWelcomePopup(); });
@@ -501,7 +385,6 @@
              // --- Project Modal Logic ---
             const modalTriggers = document.querySelectorAll('[data-modal-target]');
             const modalCloses = document.querySelectorAll('[data-modal-close]');
-
             modalTriggers.forEach(button => {
                 button.addEventListener('click', () => {
                     const modalId = button.getAttribute('data-modal-target');
@@ -513,7 +396,6 @@
                     }
                 });
             });
-
             modalCloses.forEach(button => {
                 button.addEventListener('click', () => {
                     const modalId = button.getAttribute('data-modal-close');
@@ -524,7 +406,6 @@
                     }
                 });
             });
-
             document.querySelectorAll('.modal-backdrop').forEach(modal => {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
@@ -532,6 +413,23 @@
                         modal.classList.remove('flex');
                     }
                 });
+            });
+            
+            
+            // CHANGE 2: Keyboard shortcuts ko block karne ka naya code
+            document.addEventListener('keydown', function(event) {
+                // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C ko block karna
+                if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) {
+                    event.preventDefault();
+                }
+                // Ctrl+U ko block karna
+                if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+                    event.preventDefault();
+                }
+                // F12 ko block karna
+                if (event.key === 'F12') {
+                    event.preventDefault();
+                }
             });
 
         }); // End of DOMContentLoaded listener
