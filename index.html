@@ -43,11 +43,13 @@
   box-shadow:
     0 12px 35px rgba(0,0,0,0.25),
     0 4px 15px rgba(0,0,0,0.12);
-
-    :root { --header-offset: 96px; }
-main section { scroll-margin-top: calc(var(--header-offset)); }
-
 }
+
+/* ensure anchored sections have breathing room under sticky header */
+:root { --header-offset: 96px; }
+main section { scroll-margin-top: calc(var(--header-offset)); }
+:target { scroll-margin-top: calc(var(--header-offset)); }
+
 
 
         /* ensure anchored sections have breathing room under sticky header */
@@ -532,34 +534,11 @@ window.addEventListener('resize', () => {
     document.getElementById('resume').scrollIntoView({ behavior: "smooth" });
   });
 });
-
-
-        
     </script>
-
-    // dynamic header-aware smooth scroll
-const headerEl = document.querySelector('header');
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (!href || href === '#') return;
-    const targetEl = document.querySelector(href);
-    if (!targetEl) return;
-
-    e.preventDefault();
-    const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 70;
-    const extraGap = 24;
-    const offset = headerHeight + extraGap;
-    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
-    const scrollToPos = Math.max(0, elementPosition - offset);
-    window.scrollTo({ top: scrollToPos, behavior: 'smooth' });
-  });
-});
-
 
 </body>
 </html>
+
 
 
 
