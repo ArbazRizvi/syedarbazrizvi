@@ -38,6 +38,8 @@
     
     <style>
 
+
+
         /* nicer PDF card shadow */
 .shadow-2xl {
   box-shadow:
@@ -82,9 +84,9 @@ main section { scroll-margin-top: calc(var(--header-offset)); }
         .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
         
         /* Active Nav Link */
-        nav a.nav-active { color: #14B8A6; font-weight: 600; }
-        /* Dark mode active nav link */
-        .dark nav a.nav-active { color: #14B8A6; }
+nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
+/* Dark mode active nav link */
+.dark nav a.nav-active:not([href="#resume"]) { color: #14B8A6; }
 
         /* Scroll-to-top Button */
         #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
@@ -538,6 +540,7 @@ window.addEventListener('resize', () => {
 
 </body>
 </html>
+
 
 
 
