@@ -38,7 +38,17 @@
     
     <style>
 
-        
+        /* nicer PDF card shadow */
+.shadow-2xl {
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.25),
+    0 4px 15px rgba(0,0,0,0.12);
+
+    :root { --header-offset: 96px; }
+main section { scroll-margin-top: calc(var(--header-offset)); }
+
+}
+
 
         /* ensure anchored sections have breathing room under sticky header */
 :root { --header-offset: 96px; } /* tune this value if needed */
@@ -289,14 +299,34 @@ main section { scroll-margin-top: calc(var(--header-offset)); }
             </div>
         </section>
 
-        <section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
-             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                   <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
-                   <p class="text-lg text-primary-100 mb-8">Download my complete CV, which includes all coursework, experience, and the full recommendation letters.</p>
-                   
-                   <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">Download Resume (PDF)</a>
-             </div>
-        </section>
+        <!-- ===== resume section (REPLACE EXISTING #resume SECTION WITH THIS) ===== -->
+<section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">My Résumé</h2>
+    <p class="text-lg text-primary-100 mb-6">Preview below or download the full CV.</p>
+
+    <!-- Buttons -->
+    <div class="flex gap-3 justify-center mb-8">
+      <a href="Rizvi_syed_Arbaz_Ali_CV.pdf" download
+         class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Download PDF</a>
+
+      <a href="Rizvi_syed_Arbaz_Ali_CV.pdf" target="_blank"
+         class="border border-white/80 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition">Open in new tab</a>
+    </div>
+
+    <!-- Inline PDF preview (iframe) -->
+    <div class="mx-auto max-w-4xl">
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white">
+        <!-- If your PDF viewer blocks, try <embed> or <object> (below) -->
+        <iframe src="Rizvi_syed_Arbaz_Ali_CV.pdf" class="w-full h-[700px]" style="border: none;"></iframe>
+      </div>
+    </div>
+
+    <p class="mt-4 text-sm text-white/90">If the preview doesn't load, use the "Open in new tab" button or download the PDF.</p>
+  </div>
+</section>
+<!-- ===== end resume section ===== -->
+
     </main>
 
     <footer class="bg-gray-800 dark:bg-dark-bg dark:border-t dark:border-gray-700 text-gray-400 py-12">
@@ -510,6 +540,28 @@ window.addEventListener('resize', () => {
         
     </script>
 
+    // dynamic header-aware smooth scroll
+const headerEl = document.querySelector('header');
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const targetEl = document.querySelector(href);
+    if (!targetEl) return;
+
+    e.preventDefault();
+    const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 70;
+    const extraGap = 24;
+    const offset = headerHeight + extraGap;
+    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+    const scrollToPos = Math.max(0, elementPosition - offset);
+    window.scrollTo({ top: scrollToPos, behavior: 'smooth' });
+  });
+});
+
+
 </body>
 </html>
+
 
