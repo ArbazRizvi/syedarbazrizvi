@@ -37,6 +37,18 @@
     </script>
     
     <style>
+
+        /* ensure anchored sections have breathing room under sticky header */
+:root { --header-offset: 96px; } /* tune this value if needed */
+main section { scroll-margin-top: calc(var(--header-offset)); }
+#resume { scroll-margin-top: calc(var(--header-offset)); }
+
+/* and for browsers that use :target directly */
+:target { scroll-margin-top: calc(var(--header-offset)); }
+
+
+
+        
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -360,20 +372,38 @@
                    });
              }
 
-            // --- Smooth scrolling for anchor links ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) { 
-                    e.preventDefault(); 
-                    const targetId = this.getAttribute('href'); 
-                    const targetElement = document.querySelector(targetId); 
-                    if (targetElement) { 
-                        const headerOffset = 70; 
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                    }
-                });
-            });
+            // --- Smooth scrolling for anchor links (dynamic header height) ---
+const headerEl = document.querySelector('header');
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    // preserve links like "#" or external anchors
+    if (!href || href === '#') return;
+    const targetEl = document.querySelector(href);
+    if (!targetEl) return;
+
+    e.preventDefault();
+
+    // compute header height dynamically (works on resize)
+    const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 70;
+    // extra offset so there's a little breathing room
+    const extraGap = 12;
+    const offset = headerHeight + extraGap;
+
+    // target position calculation
+    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+    const scrollToPos = Math.max(0, elementPosition - offset);
+
+    window.scrollTo({ top: scrollToPos, behavior: 'smooth' });
+  });
+});
+
+// update headerHeight on resize (optional, if you ever need it elsewhere)
+window.addEventListener('resize', () => {
+  // no-op now; we compute headerHeight on each click for safety
+});
+
 
             // --- Set current year in footer ---
             const currentYearEl = document.getElementById('current-year');
@@ -469,6 +499,7 @@
 
 </body>
 </html>
+
 
 
 
