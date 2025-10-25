@@ -2,471 +2,483 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
-    
-    <meta name="author" content="Syed Arbaz Ali Rizvi">
-    <meta name="description" content="Explore the academic portfolio of Syed Arbaz Ali Rizvi, a BS Computer Science graduate (CGPA 3.41) specializing in AI and Machine Learning. See projects, testimonials, and certificates from Stanford and IBM.">
-    <meta name="keywords" content="Syed Arbaz Ali Rizvi, Arbaaz Rizvi, Academic Portfolio, BS Computer Science, GCUF, AI, Artificial Intelligence, Machine Learning, Data Science, Python, Stanford, IBM, Johns Hopkins, Web Developer, Portfolio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
+    
+    <meta name="author" content="Syed Arbaz Ali Rizvi">
+    <meta name="description" content="Explore the academic portfolio of Syed Arbaz Ali Rizvi, a BS Computer Science graduate (CGPA 3.41) specializing in AI and Machine Learning. See projects, testimonials, and certificates from Stanford and IBM.">
+    <meta name="keywords" content="Syed Arbaz Ali Rizvi, Arbaaz Rizvi, Academic Portfolio, BS Computer Science, GCUF, AI, Artificial Intelligence, Machine Learning, Data Science, Python, Stanford, IBM, Johns Hopkins, Web Developer, Portfolio">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary': '#14B8A6', 
-                        'primary-dark': '#0D9488',
-                        'light-gray': '#F8FAFC',
-                        'dark-bg': '#111827',
-                        'dark-card': '#1F2937',
-                        'dark-text': '#F3F4F6',
-                        'dark-text-secondary': '#9CA3AF',
-                    }
-                },
-            },
-        }
-    </script>
-    
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
-        /* Dark mode scrollbar */
-        .dark ::-webkit-scrollbar-track { background: #1F2937; }
-        .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
-        .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#14B8A6', 
+                        'primary-dark': '#0D9488',
+                        'light-gray': '#F8FAFC',
+                        'dark-bg': '#111827',
+                        'dark-card': '#1F2937',
+                        'dark-text': '#F3F4F6',
+                        'dark-text-secondary': '#9CA3AF',
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
+        /* Dark mode scrollbar */
+        .dark ::-webkit-scrollbar-track { background: #1F2937; }
+        .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
 
-        /* Modals */
-        .modal-content { opacity: 0; transform: scale(0.95); }
-        .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); transition: opacity 200ms ease-out, transform 200ms ease-out; }
+        /* Modals */
+        .modal-content { opacity: 0; transform: scale(0.95); }
+        .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); transition: opacity 200ms ease-out, transform 200ms ease-out; }
 
-        /* Testimonials */
-        .testimonial-quote { position: relative; padding-left: 3rem; }
-        .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
-        
-        /* Active Nav Link */
-        nav a.nav-active { color: #14B8A6; font-weight: 600; }
-        /* Dark mode active nav link */
-        .dark nav a.nav-active { color: #14B8A6; }
+        /* Testimonials */
+        .testimonial-quote { position: relative; padding-left: 3rem; }
+        .testimonial-quote::before { content: '“'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; font-weight: 900; color: #14B8A6; opacity: 0.2; line-height: 1; }
+        
+        /* Active Nav Link */
+        nav a.nav-active { color: #14B8A6; font-weight: 600; }
+        /* Dark mode active nav link */
+        .dark nav a.nav-active { color: #14B8A6; }
 
-        /* Scroll-to-top Button */
-        #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
-        #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-        #scroll-to-top:hover { background-color: #0D9488; }
+        /* Scroll-to-top Button */
+        #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
+        #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        #scroll-to-top:hover { background-color: #0D9488; }
 
-        /* Scroll-reveal Animation */
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        /* Scroll-reveal Animation */
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* Background Pattern */
-        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
-        .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
+        /* Background Pattern */
+        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
 
-        /* FIX 1: Typing Animation (TEAL COLOR WAPIS AA GAYA) */
-        .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        #typing-name:empty::after { content: '\00a0'; }
-        #typing-name { color: #14B8A6; }
+        /* FIX 1: Typing Animation (TEAL COLOR WAPIS AA GAYA) */
+        .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        #typing-name:empty::after { content: '\00a0'; }
+        #typing-name { color: #14B8A6; }
 
-        /* FIX 2: Mobile Menu Button (STACKING ISSUE FIXED) */
-        #mobile-menu-button { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
-        #mobile-menu-button .icon { position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-        #mobile-menu-button .icon-menu { transform: rotate(0deg); opacity: 1; }
-        #mobile-menu-button .icon-x { transform: rotate(-90deg); opacity: 0; }
-        #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
-        #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
+        /* FIX 2: Mobile Menu Button (STACKING ISSUE FIXED) */
+        #mobile-menu-button { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+        #mobile-menu-button .icon { position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+        #mobile-menu-button .icon-menu { transform: rotate(0deg); opacity: 1; }
+        #mobile-menu-button .icon-x { transform: rotate(-90deg); opacity: 0; }
+        #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
+        #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
 
-        /* Image Protection Class */
-        .protected-img {
-            pointer-events: none;
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE 10+ */
-            user-select: none; /* Standard */
-            -webkit-user-drag: none; /* Safari */
-            -khtml-user-drag: none; /* Konqueror HTML */
-            -moz-user-drag: none; /* Firefox */
-            -o-user-drag: none; /* Opera */
-            user-drag: none;
-        }
-    </style>
+        /* Image Protection Class */
+        .protected-img {
+            pointer-events: none;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard */
+            -webkit-user-drag: none; /* Safari */
+            -khtml-user-drag: none; /* Konqueror HTML */
+            -moz-user-drag: none; /* Firefox */
+            -o-user-drag: none; /* Opera */
+            user-drag: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold text-gray-900 dark:text-dark-text">Syed Arbaz Ali Rizvi</a>
-                </div>
-                <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6" id="desktop-nav-links">
-                    <a href="#about" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">About</a>
-                    <a href="#education" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Education</a>
-                    <a href="#certifications" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Certifications</a>
-          _**[User-driven request: Redact content]**_
-                    <a href="#research" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Research</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Testimonials</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Contact</a>
-                    
-                    <button id="dark-mode-toggle-desktop" class="ml-4 p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card">
-                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
-                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
-                        <span class="sr-only">Toggle dark mode</span>
-                    </button>
-                    
-                    <a href="#resume" class="bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black active:bg-black transition-colors ml-2">View Resume</a>
-                </div>
-                <div class="md:hidden flex items-center gap-2">
-                    <button id="dark-mode-toggle-mobile" class="p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card">
-                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
-                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
-                        <span class="sr-only">Toggle dark mode</span>
-                    </button>
-                     <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none relative">
-                           <i data-lucide="menu" class="icon icon-menu"></i>
-                           <i data-lucide="x" class="icon icon-x"></i>
-                     </button>
-                </div>
-  D-REDACT-5D;   </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-card shadow-lg">
-            <a href="#about" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-            <a href="#education" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Education</a>
-            <a href="#certifications" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Certifications</a>
-            <a href="#projects" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
-            <a href="#research" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Research</a>
-            <a href="#testimonials" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Testimonials</a>
-            <a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
-            <a href="#resume" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">View Resume</a>
-        </div>
-    </header>
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-gray-900 dark:text-dark-text">Syed Arbaz Ali Rizvi</a>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6" id="desktop-nav-links">
+                    <a href="#about" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">About</a>
+                    <a href="#education" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Education</a>
+                    <a href="#certifications" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Certifications</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Projects</a>
+                    <a href="#research" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Research</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Contact</a>
+                    
+                    <button id="dark-mode-toggle-desktop" class="ml-4 p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card">
+                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
+                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
+                        <span class="sr-only">Toggle dark mode</span>
+                    </button>
+                    
+                    <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors ml-2">View Resume</a>
+                </div>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle-mobile" class="p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card">
+                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
+                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
+                        <span class="sr-only">Toggle dark mode</span>
+                    </button>
+                     <button id="mobile-menu-button" class="text-primary p-2 rounded-md focus:outline-none relative">
+                           <i data-lucide="menu" class="icon icon-menu"></i>
+                           <i data-lucide="x" class="icon icon-x"></i>
+                     </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-card shadow-lg">
+            <a href="#about" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+            <a href="#education" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Education</a>
+            <a href="#certifications" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Certifications</a>
+            <a href="#projects" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+            <a href="#research" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Research</a>
+            <a href="#testimonials" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Testimonials</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+            <a href="#resume" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">View Resume</a>
+        </div>
+    </header>
 
-    <main>
-        <section id="home" class="min-h-[80vh] flex items-center bg-white dark:bg-dark-card shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1>
-                <p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2">
-                 <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
-             </div></div></div>
-        </section>
+    <main>
+        <section id="home" class="min-h-[80vh] flex items-center bg-white dark:bg-dark-card shadow-sm">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div class="flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2 text-center md:text-left"><span class="text-primary font-semibold">BS Computer Science Graduate</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1>
+                <p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p><div class="flex gap-4 justify-center md:justify-start"><a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a><a href="#resume" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a></div></div><div class="md:w-1/2">
+                 <img src="https://lh3.googleusercontent.com/d/1uTLhm4it3qFjJGeJxIyODAwTOrPl6fxg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
+             </div></div></div>
+        </section>
 
-        <section id="about" class="py-24 md:py-32 fade-in-section">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text tracking-tight mb-6">About Me</h2>
-                 <p id="about-me-content" class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">
-                     My name is <b> `Syed Arbaz Ali Rizvi`</b>, and I am a recent graduate from <b> GC University Faisalabad (Layyah Campus) </b> with a Bachelor of Science in Computer Science <b> (CGPA 3.41/4.00) </b>. My fascination with Artificial Intelligence and Machine Learning began during my coursework and was solidified by completing specializations from Stanford Online and IBM. I am driven to apply my skills in Python, data analysis, and web development to solve complex, real-world problems.
-                 </p>
-                 <p class="text-lg text-gray-800 dark:text-dark-text font-semibold mb-8">
-                     I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
-                 </p>
-            </div>
-        </section>
+        <section id="about" class="py-24 md:py-32 fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text tracking-tight mb-6">About Me</h2>
+                 <p id="about-me-content" class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">
+                     My name is <b> `Syed Arbaz Ali Rizvi`</b>, and I am a recent graduate from <b> GC University Faisalabad (Layyah Campus) </b> with a Bachelor of Science in Computer Science <b> (CGPA 3.41/4.00) </b>. My fascination with Artificial Intelligence and Machine Learning began during my coursework and was solidified by completing specializations from Stanford Online and IBM. I am driven to apply my skills in Python, data analysis, and web development to solve complex, real-world problems.
+                 </p>
+                 <p class="text-lg text-gray-800 dark:text-dark-text font-semibold mb-8">
+                     I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
+                 </p>
+            </div>
+        </section>
 
-        <section id="education" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Education & Skills</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Education</h3><p class="font-medium dark:text-dark-text-secondary">BS Computer Science</p><p class="text-gray-600 dark:text-dark-text-secondary mb-2">GC University Faisalabad, Layyah Campus</p><p class="text-sm text-gray-500 dark:text-gray-400">2020 - 2024</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">CGPA: 3.41 / 4.00</p></div><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Relevant Coursework</h3><ul class="list-disc list-inside text-gray-600 dark:text-dark-text-secondary space-y-1"><li>Artificial Intelligence (A-)</li><li>Web Design and Development (A-)</li><li>Data Structure and Algorithms (B)</li><li>Database Systems (B+)</li><li>Compiler Construction (A-)</li><li>Final Year Project (A)</li></ul></div><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Key Skills</h3><div class="flex flex-wrap gap-2"><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">PyTorch</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Data Science</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">HTML/CSS</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">JavaScript</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span></div></div></div></div>
-        </section>
+        <section id="education" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Education & Skills</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Education</h3><p class="font-medium dark:text-dark-text-secondary">BS Computer Science</p><p class="text-gray-600 dark:text-dark-text-secondary mb-2">GC University Faisalabad, Layyah Campus</p><p class="text-sm text-gray-500 dark:text-gray-400">2020 - 2024</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">CGPA: 3.41 / 4.00</p></div><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Relevant Coursework</h3><ul class="list-disc list-inside text-gray-600 dark:text-dark-text-secondary space-y-1"><li>Artificial Intelligence (A-)</li><li>Web Design and Development (A-)</li><li>Data Structure and Algorithms (B)</li><li>Database Systems (B+)</li><li>Compiler Construction (A-)</li><li>Final Year Project (A)</li></ul></div><div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg"><i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Key Skills</h3><div class="flex flex-wrap gap-2"><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">PyTorch</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Data Science</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">HTML/CSS</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">JavaScript</span><span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span></div></div></div></div>
+        </section>
 
-        <section id="certifications" class="py-24 md:py-32 fade-in-section">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https.coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https.coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p></div><a href="https.certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-             </div></div>
-        </section>
+        <section id="certifications" class="py-24 md:py-32 fade-in-section">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https.coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https.coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p></div><a href="https.certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+             </div></div>
+        </section>
 
-        <section id="projects" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Featured Projects</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Kids Guard Application (FYP)</h3>
-                 <p id="project-desc-1" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">Developed 'Kids Guard' as my Final Year Project (Grade A), a parental control and child safety application. [This is a great spot to add 1-2 sentences on the tech used, e.g., Android, Firebase, etc.]</p>
-                 <div class="flex gap-4">
-                    <button data-modal-target="project-modal-1" class="text-primary font-medium hover:text-primary-dark">View Details</button>
-                    <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
-                 </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Web Development Project</h3>
-                 <p id="project-desc-2" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your JHU Web Dev course. Describe what you built using HTML, CSS, and JavaScript. e.g., "Built a responsive restaurant website..."]</p>
-                 <div class="flex gap-4">
-                    <button data-modal-target="project-modal-2" class="text-primary font-medium hover:text-primary-dark">View Details</button>
-                    <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
-                 </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
-                 <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">AI / Machine Learning Project</h3>
-                 <p id="project-desc-3" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your Stanford or IBM courses. Was it a regression model? A classifier? Describe it. e.g., "Trained a Scikit-learn model to predict..."]</p>
-                 <div class="flex gap-4">
-                    <button data-modal-target="project-modal-3" class="text-primary font-medium hover:text-primary-dark">View Details</button>
-              _**[User-driven request: Redact content]**_
-                 </div></div></div></div></div>
-        </section>
+        <section id="projects" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Featured Projects</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                 <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Kids Guard Application (FYP)</h3>
+                 <p id="project-desc-1" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">Developed 'Kids Guard' as my Final Year Project (Grade A), a parental control and child safety application. [This is a great spot to add 1-2 sentences on the tech used, e.g., Android, Firebase, etc.]</p>
+                 <div class="flex gap-4">
+                    <button data-modal-target="project-modal-1" class="text-primary font-medium hover:text-primary-dark">View Details</button>
+                    <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
+                 </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                 <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Web Development Project</h3>
+                 <p id="project-desc-2" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your JHU Web Dev course. Describe what you built using HTML, CSS, and JavaScript. e.g., "Built a responsive restaurant website..."]</p>
+                 <div class="flex gap-4">
+                    <button data-modal-target="project-modal-2" class="text-primary font-medium hover:text-primary-dark">View Details</button>
+                    <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
+                 </div></div></div><div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                 <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;"><div class="p-6"><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">AI / Machine Learning Project</h3>
+                 <p id="project-desc-3" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">[Project from your Stanford or IBM courses. Was it a regression model? A classifier? Describe it. e.g., "Trained a Scikit-learn model to predict..."]</p>
+                 <div class="flex gap-4">
+                    <button data-modal-target="project-modal-3" class="text-primary font-medium hover:text-primary-dark">View Details</button>
+                    <a href="#" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
+                 </div></div></div></div></div>
+        </section>
 
-        <section id="research" class="py-24 md:py-32 fade-in-section">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Research & Publications</h2>
-                <div class="space-y-8">
-                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">[Your Research Paper Title]</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">[Conference or Journal Name], [Year]</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">This is a placeholder for your first publication. Describe the abstract or key findings here. For example: "This paper introduces a novel machine learning model for detecting cyberbullying in real-time...
-                        </p>
-                        <a href="#" class="text-primary font-medium hover:text-primary-dark">[Read Paper]</a>
-D-REDACT-26D;                   </div>
-                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">[Undergraduate Thesis / FYP Publication]</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">GC University Faisalabad, [Year]</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">This space is perfect for detailing your Final Year Project, 'Kids Guard'. You can elaborate on the methodology, the machine learning model used, and the results you achieved.
-                        </p>
-                        <a href="#" class="text-primary font-medium hover:text-primary-dark">[View Thesis]</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="research" class="py-24 md:py-32 fade-in-section">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Research & Publications</h2>
+                <div class="space-y-8">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">[Your Research Paper Title]</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">[Conference or Journal Name], [Year]</p>
+                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">This is a placeholder for your first publication. Describe the abstract or key findings here. For example: "This paper introduces a novel machine learning model for detecting cyberbullying in real-time...
+                        </p>
+                        <a href="#" class="text-primary font-medium hover:text-primary-dark">[Read Paper]</a>
+                    </div>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">[Undergraduate Thesis / FYP Publication]</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">GC University Faisalabad, [Year]</p>
+                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">This space is perfect for detailing your Final Year Project, 'Kids Guard'. You can elaborate on the methodology, the machine learning model used, and the results you achieved.
+                        </p>
+                        <a href="#" class="text-primary font-medium hover:text-primary-dark">[View Thesis]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="testimonials" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
-             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-16 tracking-tight">What My Professors Say</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
-                 <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Ali Raza Shah</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."</p></div><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
-                 <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Tayyab Hussain</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor & FYP Supervisor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."</p></div><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
-                 <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Yasir Arafat</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."</p></div></div></div>
-        </section>
-        
-        <section id="contact" class="py-24 md:py-32 fade-in-section">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Get In Touch</h2>
-                <div class="bg-white dark:bg-dark-card p-8 rounded-xl shadow-lg">
-                    <p class="text-center text-lg text-gray-600 dark:text-dark-text-secondary mb-8">
-                        I'm open to collaborations, research opportunities, or any academic inquiries. Feel free to reach out.
-                    </p>
-                    <form action="https://formspree.io/f/[YOUR_UNIQUE_ID]" method="POST" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Name</label>
-                                <input type="text" name="name" id="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Email</label>
-                                <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                        </div>
-            _**[User-driven request: Redact content]**_
-                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Subject</label>
-                            <input type="text" name="subject" id="subject" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Message</label>
-D-REDACT-19D;                       <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg text-lg">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <section id="testimonials" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
+             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-16 tracking-tight">What My Professors Say</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
+                 <img src="https://lh3.googleusercontent.com/d/1X-E55QelVy9oc3KeHJ98cF0Hp19MpQ7J" alt="Professor Ali Raza Shah" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Shah'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Ali Raza Shah</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"Intellectually, he is one of the very best students I have ever worked with. He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does."</p></div><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
+                 <img src="https://lh3.googleusercontent.com/d/16kmX3QMA15O9VoyUoiuJ5YsOz-6k1RmK" alt="Professor Tayyab Hussain" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Hussain'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Tayyab Hussain</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor & FYP Supervisor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"He does his work conscientiously, he always seeks out coursework that challenges him, and he has an amazing capacity for fulfilling his responsibilities... His accomplishments will no doubt make him a highly recruited individual for the top graduate schools."</p></div><div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
+                 <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"> <div class="mb-6"><p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Yasir Arafat</p><p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor, Dept. of CS, GCUF</p></div><p class="testimonial-quote text-lg text-gray-700 dark:text-dark-text-secondary italic flex-grow">"He has the ability to carry out research independently, he is extremely disciplined in his work, his analytical skills are highly developed, and he is always thorough in what he does. ...one of the very best students I have ever worked with."</p></div></div></div>
+        </section>
+        
+        <section id="contact" class="py-24 md:py-32 fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Get In Touch</h2>
+                <div class="bg-white dark:bg-dark-card p-8 rounded-xl shadow-lg">
+                    <p class="text-center text-lg text-gray-600 dark:text-dark-text-secondary mb-8">
+                        I'm open to collaborations, research opportunities, or any academic inquiries. Feel free to reach out.
+                    </p>
+                    <form action="https://formspree.io/f/[YOUR_UNIQUE_ID]" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Name</label>
+                                <input type="text" name="name" id="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Email</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Subject</label>
+                            <input type="text" name="subject" id="subject" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-dark-text-secondary mb-1">Message</label>
+                            <textarea name="message" id="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-dark-bg dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg text-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-        <section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
-C-REDACT-10D;            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                   <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
-                   <p class="text-lg text-primary-100 mb-8">Download my complete CV, which includes all coursework, experience, and the full recommendation letters.</p>
-                   
-                   <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">Download Resume (PDF)</a>
-C-REDACT-1D;              </div>
-        </section>
-    </main>
+        <section id="resume" class="py-24 md:py-32 bg-primary text-white fade-in-section">
+             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                   <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Get My Full Resume</h2>
+                   <p class="text-lg text-primary-100 mb-8">Download my complete CV, which includes all coursework, experience, and the full recommendation letters.</p>
+                   
+                   <a href="[LINK_TO_YOUR_COMBINED_PDF_RESUME]" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg text-lg">Download Resume (PDF)</a>
+             </div>
+        </section>
+    </main>
 
-    <footer class="bg-gray-800 dark:bg-dark-bg dark:border-t dark:border-gray-700 text-gray-400 py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-             <div class="flex justify-center space-x-6 mb-6">
-    g-REDACT-2D;              <a href="[YOUR_LINKEDIN_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                   <a href="[YOUR_GITHUB_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
-                   <a href="mailto:[YOUR_EMAIL@gmail.com]" class="hover:text-white" aria-label="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                   <a href="[YOUR_GOOGLE_SCHOLAR_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i data-lucide="graduation-cap" class="w-6 h-6"></i></a>
-             </div>
-             <p>© <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
-i-REDACT-1D;        </div>
-    </footer>
-    
-    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
-    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
-    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
-    
-    <button id="scroll-to-top" title="Scroll to top">
-        <i data-lucide="arrow-up" class="w-5 h-5"></i>
-    </button>
+    <footer class="bg-gray-800 dark:bg-dark-bg dark:border-t dark:border-gray-700 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+             <div class="flex justify-center space-x-6 mb-6">
+                   <a href="[YOUR_LINKEDIN_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                   <a href="[YOUR_GITHUB_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                   <a href="mailto:[YOUR_EMAIL@gmail.com]" class="hover:text-white" aria-label="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                   <a href="[YOUR_GOOGLE_SCHOLAR_URL]" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i data-lucide="graduation-cap" class="w-6 h-6"></i></a>
+             </div>
+             <p>© <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
+       </div>
+    </footer>
+    
+    <div id="welcome-popup" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
+    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">...</div>
+    
+    <button id="scroll-to-top" title="Scroll to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
-    <script>
-        // --- Main Script Execution ---
-        document.addEventListener('DOMContentLoaded', () => {
+    <script>
+        // --- Main Script Execution ---
+        document.addEventListener('DOMContentLoaded', () => {
 
-            // Initialize Lucide icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            } else {
-                console.error("Lucide icons script not loaded.");
-ci-REDACT-5D;             }
-            
-            // --- Dark Mode Logic ---
-            const htmlElement = document.documentElement;
-            const desktopToggle = document.getElementById('dark-mode-toggle-desktop');
-            const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
-            function applyTheme() {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    htmlElement.classList.add('dark');
-                } else {
-                    htmlElement.classList.remove('dark');
-E-REDACT-4D;                 }
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-            }
-            function toggleDarkMode() {
-                if (htmlElement.classList.contains('dark')) {
-                    htmlElement.classList.remove('dark');
-                    localStorage.theme = 'light';
-                } else {
-                    htmlElement.classList.add('dark');
-E-REDACT-1D;                     localStorage.theme = 'dark';
-                }
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-            }
-            if (desktopToggle) desktopToggle.addEventListener('click', toggleDarkMode);
-            if (mobileToggle) mobileToggle.addEventListener('click', toggleDarkMode);
-            applyTheme();
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error("Lucide icons script not loaded.");
+            }
+            
+            // --- Dark Mode Logic ---
+            const htmlElement = document.documentElement;
+            const desktopToggle = document.getElementById('dark-mode-toggle-desktop');
+            const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
+            function applyTheme() {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    htmlElement.classList.add('dark');
+                } else {
+                    htmlElement.classList.remove('dark');
+                }
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+            function toggleDarkMode() {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+            if (desktopToggle) desktopToggle.addEventListener('click', toggleDarkMode);
+            if (mobileToggle) mobileToggle.addEventListener('click', toggleDarkMode);
+            applyTheme();
 
-            // --- Mobile menu toggle ---
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (menuButton) {
-                menuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    menuButton.classList.toggle('menu-open');
-                });
-            }
-             if (mobileMenu) {
-                   mobileMenu.querySelectorAll('a').forEach(link => {
-                         link.addEventListener('click', () => {
-                              mobileMenu.classList.add('hidden');
-                              if (menuButton) menuButton.classList.remove('menu-open');
-                         });
-                   });
-             }
+            // --- Mobile menu toggle ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    menuButton.classList.toggle('menu-open');
+                });
+            }
+             if (mobileMenu) {
+                   mobileMenu.querySelectorAll('a').forEach(link => {
+                         link.addEventListener('click', () => {
+                              mobileMenu.classList.add('hidden');
+                              if (menuButton) menuButton.classList.remove('menu-open');
+                         });
+                   });
+             }
 
-            // --- Smooth scrolling for anchor links ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) { 
-                    e.preventDefault(); 
-                    const targetId = this.getAttribute('href'); 
-                    const targetElement = document.querySelector(targetId); 
-                    if (targetElement) { 
-                        const headerOffset = 70; 
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                    }
-                });
-            });
+            // --- Smooth scrolling for anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) { 
+                    e.preventDefault(); 
+                    const targetId = this.getAttribute('href'); 
+                    const targetElement = document.querySelector(targetId); 
+                    if (targetElement) { 
+                        const headerOffset = 70; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
 
-            // --- Set current year in footer ---
-            const currentYearEl = document.getElementById('current-year');
-            if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
-            
-            // --- Scroll-to-Top Button Logic ---
-            const scrollToTopButton = document.getElementById('scroll-to-top');
-            if (scrollToTopButton) { 
-                window.addEventListener('scroll', () => { scrollToTopButton.classList.toggle('show', window.scrollY > 300); });
-                scrollToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-            }
-            
-            // --- Scroll-Reveal Animations Logic ---
-            const fadeSections = document.querySelectorAll('.fade-in-section');
-            const sectionObserver = new IntersectionObserver((entries, observer) => { 
-                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
-img-REDACT-2D;             }, { threshold: 0.1 }); 
-            fadeSections.forEach(section => sectionObserver.observe(section));
+            // --- Set current year in footer ---
+            const currentYearEl = document.getElementById('current-year');
+            if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+            
+            // --- Scroll-to-Top Button Logic ---
+            const scrollToTopButton = document.getElementById('scroll-to-top');
+            if (scrollToTopButton) { 
+                window.addEventListener('scroll', () => { scrollToTopButton.classList.toggle('show', window.scrollY > 300); });
+                scrollToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            }
+            
+            // --- Scroll-Reveal Animations Logic ---
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            const sectionObserver = new IntersectionObserver((entries, observer) => { 
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.1 }); 
+            fadeSections.forEach(section => sectionObserver.observe(section));
 
-            // --- Active Nav Link Highlighting Logic ---
-            const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]:not([href="#resume"])');
-            const sections = document.querySelectorAll('main section[id]');
-            const navObserverOptions = { root: null, rootMargin: '-40% 0px -60% 0px', threshold: 0 }; 
-            const navObserver = new IntersectionObserver((entries) => { 
-                entries.forEach(entry => { 
-                    if (entry.isIntersecting) { 
-                        const id = entry.target.getAttribute('id'); 
-                        const activeLink = document.querySelector(`#desktop-nav-links a[href="#${id}"]`); 
-                        navLinks.forEach(link => link.classList.remove('nav-active')); 
-                        if (activeLink) activeLink.classList.add('nav-active'); 
-                    } 
-                });
-            }, navObserverOptions);
-            sections.forEach(section => navObserver.observe(section));
+            // --- Active Nav Link Highlighting Logic ---
+            const navLinks = document.querySelectorAll('#desktop-nav-links a[href^="#"]:not([href="#resume"])');
+            const sections = document.querySelectorAll('main section[id]');
+            const navObserverOptions = { root: null, rootMargin: '-40% 0px -60% 0px', threshold: 0 }; 
+            const navObserver = new IntersectionObserver((entries) => { 
+                entries.forEach(entry => { 
+                    if (entry.isIntersecting) { 
+                        const id = entry.target.getAttribute('id'); 
+                        const activeLink = document.querySelector(`#desktop-nav-links a[href="#${id}"]`); 
+                        navLinks.forEach(link => link.classList.remove('nav-active')); 
+                        if (activeLink) activeLink.classList.add('nav-active'); 
+                    } 
+                });
+            }, navObserverOptions);
+            sections.forEach(section => navObserver.observe(section));
 
-            // --- Typing Animation Logic ---
-             const typingElement = document.getElementById('typing-name');
-             if (typingElement && typeof TypeIt !== 'undefined') { 
-                   new TypeIt('#typing-name', { strings: ["Syed Arbaz Ali Rizvi"], speed: 100, deleteSpeed: 75, lifeLike: true, loop: true, breakLines: false, waitUntilVisible: true, afterString: async () => await new Promise(resolve => setTimeout(resolve, 10000)) }).go();
-             } 
-             else if (!typingElement) console.error("Typing target #typing-name not found.");
-             else console.error("TypeIt library not loaded.");
-             
-             // --- Project Modal Logic ---
-            const modalTriggers = document.querySelectorAll('[data-modal-target]');
-            const modalCloses = document.querySelectorAll('[data-modal-close]');
-            modalTriggers.forEach(button => {
-i-REDACT-1D;                 button.addEventListener('click', () => {
-                    const modalId = button.getAttribute('data-modal-target');
-                    const modal = document.getElementById(modalId);
-                    if (modal) {
-                        modal.classList.remove('hidden');
-                        modal.classList.add('flex');
-                        if (typeof lucide !== 'undefined') lucide.createIcons();
-                    }
-                });
-            });
-            modalCloses.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modalId = button.getAttribute('data-modal-close');
-                    const modal = document.getElementById(modalId);
-                    if (modal) {
-                        modal.classList.add('hidden');
-ci-REDACT-5D;                         modal.classList.remove('flex');
-                    }
-          _**[User-driven request: Redact content]**_
-                });
-            });
-            document.querySelectorAll('.modal-backdrop').forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.add('hidden');
-                D-REDACT-5D;             modal.classList.remove('flex');
-                    }
-                });
-            });
-            
-            
-            // --- Keyboard Shortcut Blocking ---
-ci-REDACT-1D;             document.addEventListener('keydown', function(event) {
-                if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) {
-                    event.preventDefault();
-                }
-                if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
-E-REDACT-1D;                     event.preventDefault();
-                }
-                if (event.key === 'F12') {
-                    event.preventDefault();
-                }
-            });
+            // --- Welcome Popup Logic ---
+            const welcomePopup = document.getElementById('welcome-popup');
+            const welcomePopupClose = document.getElementById('welcome-popup-close');
+            const welcomePopupOk = document.getElementById('welcome-popup-ok');
+            function showWelcomePopup() { if (welcomePopup) { welcomePopup.classList.remove('hidden'); welcomePopup.classList.add('flex'); if (typeof lucide !== 'undefined') lucide.createIcons(); } }
+            function hideWelcomePopup() { if (welcomePopup) { welcomePopup.classList.add('hidden'); welcomePopup.classList.remove('flex'); } }
+            function checkWelcomePopup() { const lastVisitTime = localStorage.getItem('lastVisitTime'); const now = new Date().getTime(); const THIRTY_MINUTES_MS = 30 * 60 * 1000; if (!lastVisitTime || (now - lastVisitTime > THIRTY_MINUTES_MS)) { setTimeout(showWelcomePopup, 1000); localStorage.setItem('lastVisitTime', now.toString()); } }
+            checkWelcomePopup();
+            if(welcomePopupClose) welcomePopupClose.addEventListener('click', hideWelcomePopup);
+            if(welcomePopupOk) welcomePopupOk.addEventListener('click', hideWelcomePopup);
+            if(welcomePopup) welcomePopup.addEventListener('click', (e) => { if (e.target === welcomePopup) hideWelcomePopup(); });
 
-        }); // End of DOMContentLoaded listener
-    </script>
+            // --- Typing Animation Logic ---
+             const typingElement = document.getElementById('typing-name');
+             if (typingElement && typeof TypeIt !== 'undefined') { 
+                   new TypeIt('#typing-name', { strings: ["Syed Arbaz Ali Rizvi"], speed: 100, deleteSpeed: 75, lifeLike: true, loop: true, breakLines: false, waitUntilVisible: true, afterString: async () => await new Promise(resolve => setTimeout(resolve, 10000)) }).go();
+             } 
+             else if (!typingElement) console.error("Typing target #typing-name not found.");
+             else console.error("TypeIt library not loaded.");
+             
+             // --- Project Modal Logic ---
+            const modalTriggers = document.querySelectorAll('[data-modal-target]');
+            const modalCloses = document.querySelectorAll('[data-modal-close]');
+            modalTriggers.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal-target');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    }
+                });
+            });
+            modalCloses.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal-close');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                    }
+                });
+            });
+            document.querySelectorAll('.modal-backdrop').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                    }
+                });
+            });
+            
+            
+            // --- Keyboard Shortcut Blocking ---
+            document.addEventListener('keydown', function(event) {
+                if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'C' || event.key === 'c')) {
+                    event.preventDefault();
+                }
+                if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
+                    event.preventDefault();
+                }
+                if (event.key === 'F12') {
+                    event.preventDefault();
+                }
+            });
+
+        }); // End of DOMContentLoaded listener
+    </script>
 
 </body>
 </html>
