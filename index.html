@@ -3,32 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // All default text (body, paragraphs, generic elements) will use Lato
-                        'sans': ['Lato', 'sans-serif'], 
-                        // You can create a new class 'font-heading' for headlines
-                        'heading': ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        // ... your existing colors ...
-                    }
-                },
-            },
-        }
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
     
@@ -46,7 +20,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Lato', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
                         'primary': '#14B8A6', 
@@ -63,14 +37,8 @@
     </script>
     
     <style>
-        
-/* NEW CSS for Headings/Body - IMPORTANT: Use this if you want the font to apply globally */
-.font-sans, .font-heading {
-    font-family: 'Lato', sans-serif !important; /* Forces Lato to be default */
-}
-h1, h2, h3, h4, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-6xl {
-    font-family: 'Montserrat', sans-serif !important; /* Forces Montserrat for headers */
-}
+
+
 
         /* nicer PDF card shadow */
 .shadow-2xl {
@@ -163,7 +131,7 @@ nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
     </style>
 </head>
 
-<body class="font-heading antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
+<body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -240,13 +208,13 @@ nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
 
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
              <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https.coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https.coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p></div><a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p></div><a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
                 <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p></div><a href="https.certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
-                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https.coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
+                <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col"><div class="p-6 flex-grow"><i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i><h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3><p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p></div><a href="https://coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a></div>
              </div></div>
         </section>
 
@@ -284,11 +252,11 @@ nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
                         <a href="#" class="text-primary font-medium hover:text-primary-dark">[Read Paper]</a>
                     </div>
                     <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">[Undergraduate Thesis / FYP Publication]</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">GC University Faisalabad, [Year]</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">This space is perfect for detailing your Final Year Project, 'Kids Guard'. You can elaborate on the methodology, the machine learning model used, and the results you achieved.
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Kids Guard: Multimodal AI-Powered Child Safety Platform</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Final Year Project Thesis, GC University Faisalabad, 2024</p>
+                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">The thesis details the development of a full-stack AI application using a fine-tuned BERT model for cyberbullying detection and a Kalman Filter-enhanced Computer Vision pipeline for robust human tracking and occlusion mitigation.
                         </p>
-                        <a href="#" class="text-primary font-medium hover:text-primary-dark">[View Thesis]</a>
+                        <a href="kids_guard_thesis.pdf" target="_blank" class="text-primary font-medium hover:text-primary-dark">[View Thesis]</a>
                     </div>
                 </div>
             </div>
