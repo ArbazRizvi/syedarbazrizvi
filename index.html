@@ -3,6 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // All default text (body, paragraphs, generic elements) will use Lato
+                        'sans': ['Lato', 'sans-serif'], 
+                        // You can create a new class 'font-heading' for headlines
+                        'heading': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        // ... your existing colors ...
+                    }
+                },
+            },
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Portfolio - Syed Arbaz Ali Rizvi</title>
     
@@ -20,7 +46,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Lato', 'sans-serif'],
                     },
                     colors: {
                         'primary': '#14B8A6', 
@@ -37,8 +63,14 @@
     </script>
     
     <style>
-
-
+        
+/* NEW CSS for Headings/Body - IMPORTANT: Use this if you want the font to apply globally */
+.font-sans, .font-heading {
+    font-family: 'Lato', sans-serif !important; /* Forces Lato to be default */
+}
+h1, h2, h3, h4, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-6xl {
+    font-family: 'Montserrat', sans-serif !important; /* Forces Montserrat for headers */
+}
 
         /* nicer PDF card shadow */
 .shadow-2xl {
@@ -131,7 +163,7 @@ nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
     </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
+<body class="font-heading antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -540,9 +572,3 @@ window.addEventListener('resize', () => {
 
 </body>
 </html>
-
-
-
-
-
-
