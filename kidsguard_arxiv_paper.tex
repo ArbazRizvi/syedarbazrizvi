@@ -20,11 +20,8 @@
 \usepackage{parskip} % Vertical space between paragraphs
 \usepackage{authblk} % Author block
 
-% --- GRAPHICS SETUP (Simplified for guaranteed compilation) ---
-% These lines are necessary for \includegraphics when you submit the file, 
-% but the image file MUST be uploaded separately.
-\graphicspath{{./figures/}{./images/}} 
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+% --- GRAPHICS SETUP REMOVED ---
+% \graphicspath and \DeclareGraphicsExtensions removed as external files are not supported.
 % -----------------------------------------------------------
 
 % Hyperref should be the last package loaded
@@ -32,7 +29,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,     
     urlcolor=cyan,
 }
 
@@ -50,56 +47,64 @@
 \thispagestyle{plain}
 
 \begin{abstract}
-Cyberbullying and physical safety are critical challenges in the digital age. This paper presents \textbf{KidsGuard}, a novel multimodal Deep Learning (DL) framework designed for the unified, real-time monitoring of both digital and physical threats facing children. The core of KidsGuard integrates two high-performance DL pipelines. First, a \textbf{Transformer-based architecture (BERT)} is explicitly fine-tuned for high-precision, context-aware classification of text streams, achieving a verified $94.6\%$ F1-score in detecting subtle cyberbullying and inappropriate content. Second, an advanced Computer Vision (CV) module utilizes \textbf{MediaPipe Pose} and a \textbf{Kalman Filter} to deliver highly robust, real-time human tracking and pose estimation. We demonstrate that the Kalman Filter integration achieves a significant $\mathbf{45\%}$ improvement in track stability during temporary occlusion, directly addressing a major reliability challenge in physical monitoring systems. The overall framework is deployed via a full-stack, low-latency microservices architecture, validating its capability to deliver safety-critical alerts within $500$ milliseconds end-to-end. This research demonstrates a significant step toward developing unified, proactive safety solutions that intelligently bridge the gap between digital and physical surveillance using state-of-the-art AI.
+Cyberbullying and physical safety are critical challenges in the digital age.
+This paper presents \textbf{KidsGuard}, a novel multimodal Deep Learning (DL) framework designed for the unified, real-time monitoring of both digital and physical threats facing children.
+The core of KidsGuard integrates two high-performance DL pipelines. First, a \textbf{Transformer-based architecture (BERT)} is explicitly fine-tuned for high-precision, context-aware classification of text streams, achieving a verified $94.6\%$ F1-score in detecting subtle cyberbullying and inappropriate content.
+Second, an advanced Computer Vision (CV) module utilizes \textbf{MediaPipe Pose} and a \textbf{Kalman Filter} to deliver highly robust, real-time human tracking and pose estimation.
+We demonstrate that the Kalman Filter integration achieves a significant $\mathbf{45\%}$ improvement in track stability during temporary occlusion, directly addressing a major reliability challenge in physical monitoring systems.
+The overall framework is deployed via a full-stack, low-latency microservices architecture, validating its capability to deliver safety-critical alerts within $500$ milliseconds end-to-end.
+This research demonstrates a significant step toward developing unified, proactive safety solutions that intelligently bridge the gap between digital and physical surveillance using state-of-the-art AI.
 \end{abstract}
 
 \noindent\textbf{Keywords:} Deep Learning, Cyberbullying Detection, Transformer Model, BERT, Computer Vision, Pose Estimation, Kalman Filter, Multimodal AI, Real-Time Systems.
-
 % --- START OF SECTIONS ---
 
 \section{Introduction}
 
-The ubiquitous presence of social media and connected devices in the lives of minors necessitates robust, intelligent safety mechanisms. Current parental monitoring tools often suffer from being siloed (either digital or physical) and relying on basic keyword matching or simple image detection, leading to high false-positive rates and inadequate threat detection.
-
-The \textbf{KidsGuard} project addresses this gap by proposing and validating a multimodal framework that fuses contextual natural language understanding with reliable physical tracking. The primary contributions of this work, validated by the author, are:
+The ubiquitous presence of social media and connected devices in the lives of minors necessitates robust, intelligent safety mechanisms.
+Current parental monitoring tools often suffer from being siloed (either digital or physical) and relying on basic keyword matching or simple image detection, leading to high false-positive rates and inadequate threat detection.
+The \textbf{KidsGuard} project addresses this gap by proposing and validating a multimodal framework that fuses contextual natural language understanding with reliable physical tracking.
+The primary contributions of this work, validated by the author, are:
 \begin{enumerate}
     \item The design and implementation of a scalable, low-latency \textbf{full-stack microservices architecture} for real-time safety inference across two distinct data modalities.
     \item The successful fine-tuning and deployment of a \textbf{BERT Transformer model} to achieve state-of-art performance in classifying nuanced cyberbullying and self-harm language.
     \item The development and validation of an enhanced Computer Vision pipeline that utilizes a \textbf{Kalman Filter} to significantly improve tracking persistence and keypoint interpolation fidelity, particularly under challenging occlusion conditions.
 \end{enumerate}
-The remainder of this paper is structured as follows: Section \ref{sec:related} reviews related work. Section \ref{sec:methodology} details the system architecture and model implementations. Section \ref{sec:results} presents the experimental results, and Section \ref{sec:conclusion} concludes the paper with a discussion of future work.
-
+The remainder of this paper is structured as follows: Section \ref{sec:related} reviews related work.
+Section \ref{sec:methodology} details the system architecture and model implementations. Section \ref{sec:results} presents the experimental results, and Section \ref{sec:conclusion} concludes the paper with a discussion of future work.
 \section{Related Work}
 \label{sec:related}
 
 \subsection{Contextual Cyberbullying Detection}
-Early approaches to cyberbullying detection employed traditional Machine Learning (ML) techniques such as Support Vector Machines (SVM) and Naive Bayes, relying heavily on lexical features and sentiment analysis \cite{svm_cyber}. However, these models struggle with the context-dependent nature of modern online language, including sarcasm and evolving slang. The introduction of **Transformer models** like BERT (Bidirectional Encoder Representations from Transformers) \cite{bert_vaswani} revolutionized NLP by enabling deep contextual understanding of words based on all other words in a sentence, significantly improving performance in nuanced classification tasks \cite{bert_nlp}. Our methodology specifically leverages this contextual capability to address the limitations of legacy monitoring solutions.
-
+Early approaches to cyberbullying detection employed traditional Machine Learning (ML) techniques such as Support Vector Machines (SVM) and Naive Bayes, relying heavily on lexical features and sentiment analysis \cite{svm_cyber}.
+However, these models struggle with the context-dependent nature of modern online language, including sarcasm and evolving slang.
+The introduction of **Transformer models** like BERT (Bidirectional Encoder Representations from Transformers) \cite{bert_vaswani} revolutionized NLP by enabling deep contextual understanding of words based on all other words in a sentence, significantly improving performance in nuanced classification tasks \cite{bert_nlp}.
+Our methodology specifically leverages this contextual capability to address the limitations of legacy monitoring solutions.
 \subsection{Robust Human Pose Estimation (HPE)}
-HPE is a core component of physical safety monitoring. Two-dimensional (2D) HPE models, such as OpenPose and the more efficient **MediaPipe Pose** \cite{mediapipe}, accurately localize anatomical keypoints. However, in real-world surveillance, tracking continuity is frequently broken by objects obscuring the subject (**occlusion**) or rapid motion, leading to 'track-switching' instability. Researchers mitigate this using various filtering techniques. The computationally efficient \textbf{Kalman Filter} is widely recognized for its ability to estimate the current state of a system (e.g., joint position and velocity) and predict future states by blending prior estimates with noisy sensor data \cite{kalman_original}, making it an ideal choice for enhancing track reliability in low-latency applications like KidsGuard.
-
+HPE is a core component of physical safety monitoring.
+Two-dimensional (2D) HPE models, such as OpenPose and the more efficient **MediaPipe Pose** \cite{mediapipe}, accurately localize anatomical keypoints.
+However, in real-world surveillance, tracking continuity is frequently broken by objects obscuring the subject (**occlusion**) or rapid motion, leading to 'track-switching' instability.
+Researchers mitigate this using various filtering techniques. The computationally efficient \textbf{Kalman Filter} is widely recognized for its ability to estimate the current state of a system (e.g., joint position and velocity) and predict future states by blending prior estimates with noisy sensor data \cite{kalman_original}, making it an ideal choice for enhancing track reliability in low-latency applications like KidsGuard.
 \section{Methodology}
 \label{sec:methodology}
 
 The KidsGuard framework is designed as a cloud-native, real-time platform composed of three primary components: the Data Ingestion Layer, the Digital Threat Engine (NLP), and the Physical Tracking Engine (CV).
-
 \subsection{Digital Threat Engine: BERT-based Classification}
 
 The digital monitoring pipeline focuses on high-precision text classification across chat logs, social media posts, and search queries.
-
 \subsubsection{Model Architecture and Fine-Tuning}
-We utilized a pre-trained \textbf{BERT-base-uncased} model as the backbone for its proven ability to capture deep semantic dependencies. The model was rigorously fine-tuned on a composite dataset containing labeled examples of cyberbullying, hate speech, and self-harm keywords, aggregated from public domain social media corpora. The fine-tuning process involved:
+We utilized a pre-trained \textbf{BERT-base-uncased} model as the backbone for its proven ability to capture deep semantic dependencies.
+The model was rigorously fine-tuned on a composite dataset containing labeled examples of cyberbullying, hate speech, and self-harm keywords, aggregated from public domain social media corpora.
+The fine-tuning process involved:
 \begin{itemize}
-    \item **Tokenization:** Using the BERT-native WordPiece tokenizer.
-    \item **Optimization:** Employing the Adam optimizer with a learning rate of $2 \times 10^{-5}$ to balance fast convergence with the prevention of catastrophic forgetting from the pre-trained weights, a critical hyperparameter choice.
-    \item **Output Layer:** A final fully-connected layer with a Softmax activation function was used to output the probability score for each of the target classes (e.g., \{`Safe`, `Bullying`, `Inappropriate Content`\}).
+    \item \textbf{Tokenization:} Using the BERT-native WordPiece tokenizer.
+    \item \textbf{Optimization:} Employing the Adam optimizer with a learning rate of $2 \times 10^{-5}$ to balance fast convergence with the prevention of catastrophic forgetting from the pre-trained weights, a critical hyperparameter choice.
+    \item \textbf{Output Layer:} A final fully-connected layer with a Softmax activation function was used to output the probability score for each of the target classes (e.g., \{`Safe`, `Bullying`, `Inappropriate Content`\}).
 \end{itemize}
 Inference is performed via a dedicated REST API, ensuring minimal latency for real-time application processing.
-
 \subsection{Physical Tracking Engine: Kalman Filter for Occlusion Mitigation}
 
 The CV pipeline processes live video streams to maintain continuous pose and location tracking.
-
 \subsubsection{Two-Stage Vision Pipeline}
 \begin{enumerate}
     \item \textbf{Subject Localization (YOLOv7):} An initial stage uses the **YOLOv7** model to detect and localize all human subjects with high speed, providing efficient bounding boxes that constrain the search space for the pose estimator.
@@ -107,8 +112,8 @@ The CV pipeline processes live video streams to maintain continuous pose and loc
 \end{enumerate}
 
 \subsubsection{Kalman Filter Integration for Track Stability}
-The core innovation in this module is the post-processing integration of a **Kalman Filter** for each tracked keypoint $i$ belonging to subject $j$. This addresses the challenge of unreliable tracking caused by rapid movement or brief visual \textbf{occlusion}.
-
+The core innovation in this module is the post-processing integration of a **Kalman Filter** for each tracked keypoint $i$ belonging to subject $j$.
+This addresses the challenge of unreliable tracking caused by rapid movement or brief visual \textbf{occlusion}.
 The filter maintains a state vector $\mathbf{x}_k$ defined by position and velocity in two dimensions:
 $$
 \mathbf{x}_k = [x, y, v_x, v_y]^T
@@ -117,14 +122,14 @@ The prediction phase uses the prior state $\hat{\mathbf{x}}_{k-1}$ and the state
 $$
 \hat{\mathbf{x}}_k = \mathbf{F}\hat{\mathbf{x}}_{k-1} + \mathbf{B}\mathbf{u}_k + \mathbf{w}_k
 $$
-where $\mathbf{u}_k$ is the control input (zero in our case), and $\mathbf{w}_k$ is the process noise. When occlusion occurs (e.g., MediaPipe confidence score drops below $0.5$), the Kalman Filter's prediction $\hat{\mathbf{x}}_k$ is used as the current keypoint location, ensuring a smooth, persistent track and enabling the system to reliably reassess the subject upon re-emergence.
-
+where $\mathbf{u}_k$ is the control input (zero in our case), and $\mathbf{w}_k$ is the process noise.
+When occlusion occurs (e.g., MediaPipe confidence score drops below $0.5$), the Kalman Filter's prediction $\hat{\mathbf{x}}_k$ is used as the current keypoint location, ensuring a smooth, persistent track and enabling the system to reliably reassess the subject upon re-emergence.
 \section{Experimental Setup and Results}
 \label{sec:results}
 
 \subsection{Dataset and Evaluation Metrics}
-The models were trained and evaluated on an $80:10:10$ split (Train:Validation:Test) of respective datasets. Performance was evaluated using standard metrics, with **F1-score** being the primary metric for the NLP model due to the inherent class imbalance in cyberbullying datasets, and **PCKh@0.5** (Percentage of Correct Keypoints at head segment length threshold of $0.5$) for the CV model.
-
+The models were trained and evaluated on an $80:10:10$ split (Train:Validation:Test) of respective datasets.
+Performance was evaluated using standard metrics, with **F1-score** being the primary metric for the NLP model due to the inherent class imbalance in cyberbullying datasets, and **PCKh@0.5** (Percentage of Correct Keypoints at head segment length threshold of $0.5$) for the CV model.
 \subsection{Digital Threat Engine Performance}
 The fine-tuned BERT model significantly outperformed a baseline SVM model:
 
@@ -145,38 +150,36 @@ The fine-tuned BERT model significantly outperformed a baseline SVM model:
 \subsection{Physical Tracking Engine Reliability}
 
 The CV model's performance was measured by its ability to maintain a consistent subject identifier during periods of visual interruption.
-
 \begin{figure}[H]
     \centering
-    % --- ACTION REQUIRED: To successfully submit this paper to arXiv, you MUST replace this placeholder block with your actual image file.
-    % This placeholder is used for compilation stability where the external file is missing.
-    
-    % \framebox{...} code has been DELETED
-    
-    % This is the NEW, correct line that includes your image:
-    \includegraphics[width=0.8\textwidth]{tracking_rmse_comparison.png} 
-    
-    % When ready for submission, use the \includegraphics command, ensuring the file (e.g., tracking_rmse_comparison.pdf or .png) is uploaded alongside the .tex file:
-    % \includegraphics[width=0.8\textwidth]{tracking_rmse_comparison.pdf} 
-    
+    % --- IMAGE PLACEHOLDER (DIRECTIVE A) ---
+    % \includegraphics was replaced with this \framebox to ensure compilation.
+    % The original \includegraphics command cannot be used as external files are not supported.
+    \framebox{\parbox{0.8\textwidth}{\centering
+        \vspace{3cm}
+        \textbf{Image Placeholder} \\
+        \small\textit{Figure: tracking\_rmse\_comparison.png}
+        \vspace{3cm}
+    }}
     \caption{Experimental comparison of tracking error between raw MediaPipe output and 
-    the Kalman Filter-enhanced pipeline.} [cite: 48]
-    \label{fig:tracking_comparison} [cite: 48]
+    the Kalman Filter-enhanced pipeline.}
+    \label{fig:tracking_comparison}
 \end{figure}
 
-The integration of the Kalman Filter resulted in a measured $\mathbf{45.2\%}$ reduction in subject ID swaps compared to the raw MediaPipe output across video segments with simulated and real occlusion. Furthermore, the filter's state prediction capability reduced the maximum pixel drift error by an average of $22$ pixels during interpolation, ensuring reliable pose continuity for risk assessment.
-
+The integration of the Kalman Filter resulted in a measured $\mathbf{45.2\%}$ reduction in subject ID swaps compared to the raw MediaPipe output across video segments with simulated and real occlusion.
+Furthermore, the filter's state prediction capability reduced the maximum pixel drift error by an average of $22$ pixels during interpolation, ensuring reliable pose continuity for risk assessment.
 \section{Discussion and Limitations}
 
-The KidsGuard framework successfully demonstrates a cohesive, multimodal approach to child safety. The real-time performance of both the NLP and CV pipelines, integrated within a low-latency microservices framework, addresses the critical need for speed in safety applications.
-
-A key limitation remains the complexity of generalizing the CV model to \textbf{3D pose estimation} without specialized depth hardware. While the 2D Kalman filter significantly improves track continuity, a full 3D state estimation is necessary for accurately modeling complex actions such as fall severity or unauthorized climbing, which are depth-dependent. Future work will focus on integrating monocular 3D estimation techniques.
-
+The KidsGuard framework successfully demonstrates a cohesive, multimodal approach to child safety.
+The real-time performance of both the NLP and CV pipelines, integrated within a low-latency microservices framework, addresses the critical need for speed in safety applications.
+A key limitation remains the complexity of generalizing the CV model to \textbf{3D pose estimation} without specialized depth hardware.
+While the 2D Kalman filter significantly improves track continuity, a full 3D state estimation is necessary for accurately modeling complex actions such as fall severity or unauthorized climbing, which are depth-dependent.
+Future work will focus on integrating monocular 3D estimation techniques.
 \section{Conclusion and Future Work}
 \label{sec:conclusion}
 
-In conclusion, the \textbf{KidsGuard} project provides a highly effective framework for real-time child safety, successfully deploying and validating advanced Deep Learning models for both digital (BERT for cyberbullying) and physical (Kalman-enhanced MediaPipe for tracking) domains. The results confirm that integrating state-of-the-art AI with robust engineering principles can lead to genuinely practical and safety-critical applications.
-
+In conclusion, the \textbf{KidsGuard} project provides a highly effective framework for real-time child safety, successfully deploying and validating advanced Deep Learning models for both digital (BERT for cyberbullying) and physical (Kalman-enhanced MediaPipe for tracking) domains.
+The results confirm that integrating state-of-the-art AI with robust engineering principles can lead to genuinely practical and safety-critical applications.
 Future work will involve:
 \begin{enumerate}
     \item Exploring monocular 3D pose estimation techniques (e.g., using implicit functions) to fully capture spatial risk factors.
@@ -185,16 +188,22 @@ Future work will involve:
 \end{enumerate}
 
 \section*{Acknowledgments}
-The author gratefully acknowledges the guidance and support of Mr. Tayyab Hussain (Assistant Professor and FYP Supervisor, GCUF). Portions of this manuscript were prepared with the assistance of AI language models; all research design, data analysis, and conclusions were conducted and verified by the author, \textbf{Syed Arbaz Ali Rizvi}.
-
+The author gratefully acknowledges the guidance and support of Mr. Tayyab Hussain (Assistant Professor and FYP Supervisor, GCUF).
+Portions of this manuscript were prepared with the assistance of AI language models;
+all research design, data analysis, and conclusions were conducted and verified by the author, \textbf{Syed Arbaz Ali Rizvi}.
 \section*{References}
 % --- PLACEHOLDER REFERENCES. AMPERSANDS ESCAPED WITH '\&' ---
 \begin{enumerate}
-    \item \label{svm_cyber} Al-garadi, M. A., Varathan, K. D., \& Ravana, S. B. (2016). Cyberbullying detection: A review of the problem, solutions, and future directions. \textit{International Journal of Advanced Computer Science and Applications}.
-    \item \label{bert_vaswani} Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... \& Polosukhin, I. (2017). Attention is all you need. \textit{Advances in neural information processing systems}.
-    \item \label{mediapipe} Zhang, F., Liu, C., Xu, M., \& Yang, B. (2020). MediaPipe Hands: On-device Real-time Hand Tracking. \textit{Google AI Blog}.
-    \item \label{kalman_original} Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. \textit{Journal of basic Engineering}.
-    \item \label{bert_nlp} Devlin, J., Chang, M. W., Lee, K., \& Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. \textit{Proceedings of NAACL-HLT}.
+    \item \label{svm_cyber} Al-garadi, M. A., Varathan, K. D., \& Ravana, S. B. (2016).
+    Cyberbullying detection: A review of the problem, solutions, and future directions. \textit{International Journal of Advanced Computer Science and Applications}.
+    \item \label{bert_vaswani} Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... \& Polosukhin, I. (2017).
+    Attention is all you need. \textit{Advances in neural information processing systems}.
+    \item \label{mediapipe} Zhang, F., Liu, C., Xu, M., \& Yang, B. (2020). MediaPipe Hands: On-device Real-time Hand Tracking.
+    \textit{Google AI Blog}.
+    \item \label{kalman_original} Kalman, R. E. (1960). A new approach to linear filtering and prediction problems.
+    \textit{Journal of basic Engineering}.
+    \item \label{bert_nlp} Devlin, J., Chang, M. W., Lee, K., \& Toutanova, K. (2019).
+    BERT: Pre-training of deep bidirectional transformers for language understanding. \textit{Proceedings of NAACL-HLT}.
 \end{enumerate}
 
 \end{document}
