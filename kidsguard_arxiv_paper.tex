@@ -150,17 +150,18 @@ The CV model's performance was measured by its ability to maintain a consistent 
     \centering
     % --- ACTION REQUIRED: To successfully submit this paper to arXiv, you MUST replace this placeholder block with your actual image file.
     % This placeholder is used for compilation stability where the external file is missing.
-    \framebox{\parbox{0.8\textwidth}{\centering
-      \vspace{3cm}
-      \textbf{Figure 1: RMSE Comparison of Tracking Error (Placeholder)} \\
-      \small\textit{Comparison of Keypoint Tracking Error (RMSE) for Raw MediaPipe vs. Kalman Filter-Enhanced Tracking during 1-second Occlusion.}
-      \vspace{3cm}
-    }}
+    
+    % \framebox{...} code has been DELETED
+    
+    % This is the NEW, correct line that includes your image:
+    \includegraphics[width=0.8\textwidth]{tracking_rmse_comparison.png} 
+    
     % When ready for submission, use the \includegraphics command, ensuring the file (e.g., tracking_rmse_comparison.pdf or .png) is uploaded alongside the .tex file:
     % \includegraphics[width=0.8\textwidth]{tracking_rmse_comparison.pdf} 
     
-    \caption{Experimental comparison of tracking error between raw MediaPipe output and the Kalman Filter-enhanced pipeline.}
-    \label{fig:tracking_comparison}
+    \caption{Experimental comparison of tracking error between raw MediaPipe output and 
+    the Kalman Filter-enhanced pipeline.} [cite: 48]
+    \label{fig:tracking_comparison} [cite: 48]
 \end{figure}
 
 The integration of the Kalman Filter resulted in a measured $\mathbf{45.2\%}$ reduction in subject ID swaps compared to the raw MediaPipe output across video segments with simulated and real occlusion. Furthermore, the filter's state prediction capability reduced the maximum pixel drift error by an average of $22$ pixels during interpolation, ensuring reliable pose continuity for risk assessment.
