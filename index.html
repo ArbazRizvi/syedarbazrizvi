@@ -30,7 +30,7 @@
                         'light-gray': '#F8FAFC',
                         'dark-bg': '#111827',
                         'dark-card': '#1F2937',
-                        'dark-text': '#F3F4F6',
+                        'dark-text': '#F3F4G',
                         'dark-text-secondary': '#9CA3AF',
                     }
                 },
@@ -62,9 +62,14 @@
         .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
         .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
 
-        /* Modals Animation */
-        .modal-content { opacity: 0; transform: scale(0.95); transition: opacity 200ms ease-out, transform 200ms ease-out; }
-        .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); }
+        /* Modals Animation - REMOVED POP/BLUR */
+        .modal-content { 
+            opacity: 1; 
+            transform: scale(1); 
+            /* transition: opacity 200ms ease-out, transform 200ms ease-out; */ /* <-- Removed transition */
+        }
+        /* .modal-backdrop.flex .modal-content { opacity: 1; transform: scale(1); } */ /* <-- Removed this rule */
+
 
         /* Testimonials Quote Style */
         .testimonial-quote { position: relative; padding-left: 3rem; }
@@ -429,7 +434,7 @@
                     </div>
                     <!-- Testimonial 3 -->
                     <div class="bg-light-gray dark:bg-dark-bg p-8 rounded-xl shadow-lg flex flex-col text-center">
-                         <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='https://placehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"> 
+                         <img src="https://lh3.googleusercontent.com/d/1DuLr2bEhKjp83YKYtFVquk131E62EovE" alt="Professor Yasir Arafat" class="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-primary/50 object-cover protected-img" onerror="this.src='httpsGplacehold.co/100x100/262626/FFFFFF?text=Prof.+Arafat'; this.onerror=null;"> 
                          <div class="mb-6">
                             <p class="font-semibold text-gray-900 dark:text-dark-text">Mr. Yasir Arafat</p>
                             <p class="text-sm text-gray-600 dark:text-dark-text-secondary">Assistant Professor, Dept. of CS, GCUF</p>
@@ -520,7 +525,8 @@
     <!-- ====== Project Modals (Fleshed Out) ====== -->
     
     <!-- Modal 1: Kids Guard -->
-    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
+    <!-- MODIFICATION: Removed backdrop-blur-sm, changed bg-gray-900/50 to bg-gray-900/10 -->
+    <div id="project-modal-1" class="modal-backdrop fixed inset-0 bg-gray-900/10 z-[60] flex items-center justify-center p-4 hidden">
         <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div class="p-6 md:p-8 relative">
                 <button data-modal-close="project-modal-1" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
@@ -560,7 +566,8 @@
     </div>
     
     <!-- Modal 2: Restaurant Website -->
-    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
+    <!-- MODIFICATION: Removed backdrop-blur-sm, changed bg-gray-900/50 to bg-gray-900/10 -->
+    <div id="project-modal-2" class="modal-backdrop fixed inset-0 bg-gray-900/10 z-[60] flex items-center justify-center p-4 hidden">
         <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div class="p-6 md:p-8 relative">
                 <button data-modal-close="project-modal-2" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
@@ -599,7 +606,8 @@
     </div>
     
     <!-- Modal 3: CVD Classifier -->
-    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden">
+    <!-- MODIFICATION: Removed backdrop-blur-sm, changed bg-gray-900/50 to bg-gray-900/10 -->
+    <div id="project-modal-3" class="modal-backdrop fixed inset-0 bg-gray-900/10 z-[60] flex items-center justify-center p-4 hidden">
         <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div class="p-6 md:p-8 relative">
                 <button data-modal-close="project-modal-3" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
@@ -608,7 +616,7 @@
                 
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-text mb-6">Cardiovascular Disease Risk Classifier</h3>
                 
-                <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="ML Classifier Placeholder" class="w-full h-64 object-cover rounded-lg mb-6 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
+                <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="ML Classifier Placeholder" class="w-full h-64 object-cover rounded-lg mb-6 protected-img" onerror="this.src='httpsGplacehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
 
                 <div class="space-y-4 text-gray-600 dark:text-dark-text-secondary">
                     <div>
